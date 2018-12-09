@@ -1515,6 +1515,7 @@ pre .javascript .function {
 }
 .post-meta-divider {
   margin: 0 0.5em;
+  display: none;
 }
 .post-meta-item-icon {
   margin-right: 3px;
@@ -1822,7 +1823,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #0b4f58;
+  background: #37ffff;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -1959,6 +1960,7 @@ pre .javascript .function {
 .powered-by,
 .theme-info {
   display: inline-block;
+  display: none;
 }
 .cc-license {
   margin-top: 10px;
