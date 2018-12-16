@@ -106,7 +106,7 @@
 
 
 
-  <meta name="keywords" content="杂,">
+  <meta name="keywords" content="mathematics,">
 
 
 
@@ -119,18 +119,18 @@
 
 
 
-<meta name="description" content="一周更一集的电视剧都没有跟上，每天只能在午饭时间看一些，总算也是在结局之前追上了进度。这篇早就想写的文章也拖到电视剧快结束，拖延症也是够严重的，第一篇更新的博客，说说最近的感触。 整个剧像一场辩论，把所有的人和所有的事都推向了两个极端：处处为他人着想和处处由着自己性子。也就如辩论一样，没有谁更对，只有你更倾向谁。现实中我们所有人大约都处在中间，很多时候的妥协，可能某天面对某人或者某件事就不想再妥协">
-<meta name="keywords" content="杂">
+<meta name="description" content="这个是写GAN论文的作者Ian Goodfellow的deep learning书中线性代数部分由于比较懒的原因，就是将公式用代码实现了，并没有讲解和太多的翻译，具体的数学部分的内容还需要移步到界面看Deep Learning另，这本书的数学部分毕竟也是为深度学习打基础的，讲解不算细致，如果有看不懂的，还是需要找一本线性代数的书来看  Scalars Vectors Matrices and T">
+<meta name="keywords" content="mathematics">
 <meta property="og:type" content="article">
-<meta property="og:title" content="无法成为野兽的我们">
-<meta property="og:url" content="http://stefaniezhao.xyz/2018/12/06/无法成为野兽的我们/index.html">
+<meta property="og:title" content="linear algebra">
+<meta property="og:url" content="http://stefaniezhao.xyz/2018/12/16/linear-algebra/index.html">
 <meta property="og:site_name" content="Platform Nine and Three-Quarters">
-<meta property="og:description" content="一周更一集的电视剧都没有跟上，每天只能在午饭时间看一些，总算也是在结局之前追上了进度。这篇早就想写的文章也拖到电视剧快结束，拖延症也是够严重的，第一篇更新的博客，说说最近的感触。 整个剧像一场辩论，把所有的人和所有的事都推向了两个极端：处处为他人着想和处处由着自己性子。也就如辩论一样，没有谁更对，只有你更倾向谁。现实中我们所有人大约都处在中间，很多时候的妥协，可能某天面对某人或者某件事就不想再妥协">
+<meta property="og:description" content="这个是写GAN论文的作者Ian Goodfellow的deep learning书中线性代数部分由于比较懒的原因，就是将公式用代码实现了，并没有讲解和太多的翻译，具体的数学部分的内容还需要移步到界面看Deep Learning另，这本书的数学部分毕竟也是为深度学习打基础的，讲解不算细致，如果有看不懂的，还是需要找一本线性代数的书来看  Scalars Vectors Matrices and T">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-12-10T13:25:52.434Z">
+<meta property="og:updated_time" content="2018-12-16T09:17:25.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="无法成为野兽的我们">
-<meta name="twitter:description" content="一周更一集的电视剧都没有跟上，每天只能在午饭时间看一些，总算也是在结局之前追上了进度。这篇早就想写的文章也拖到电视剧快结束，拖延症也是够严重的，第一篇更新的博客，说说最近的感触。 整个剧像一场辩论，把所有的人和所有的事都推向了两个极端：处处为他人着想和处处由着自己性子。也就如辩论一样，没有谁更对，只有你更倾向谁。现实中我们所有人大约都处在中间，很多时候的妥协，可能某天面对某人或者某件事就不想再妥协">
+<meta name="twitter:title" content="linear algebra">
+<meta name="twitter:description" content="这个是写GAN论文的作者Ian Goodfellow的deep learning书中线性代数部分由于比较懒的原因，就是将公式用代码实现了，并没有讲解和太多的翻译，具体的数学部分的内容还需要移步到界面看Deep Learning另，这本书的数学部分毕竟也是为深度学习打基础的，讲解不算细致，如果有看不懂的，还是需要找一本线性代数的书来看  Scalars Vectors Matrices and T">
 
 
 
@@ -160,13 +160,13 @@
 
 
 
-  <link rel="canonical" href="http://stefaniezhao.xyz/2018/12/06/无法成为野兽的我们/">
+  <link rel="canonical" href="http://stefaniezhao.xyz/2018/12/16/linear-algebra/">
 
 
 
 
 
-  <title>无法成为野兽的我们 | Platform Nine and Three-Quarters</title>
+  <title>linear algebra | Platform Nine and Three-Quarters</title>
   
 
 
@@ -345,7 +345,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://stefaniezhao.xyz/2018/12/06/无法成为野兽的我们/">
+    <link itemprop="mainEntityOfPage" href="http://stefaniezhao.xyz/2018/12/16/linear-algebra/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Stefanie Zhao">
@@ -362,7 +362,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">无法成为野兽的我们</h1>
+          <h1 class="post-title" itemprop="name headline">linear algebra</h1>
         
 
         <div class="post-meta">
@@ -374,8 +374,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-12-06T22:11:16+08:00">
-                2018-12-06
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-12-16T16:58:08+08:00">
+                2018-12-16
               </time>
             
 
@@ -397,8 +397,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/个人感想/" itemprop="url" rel="index">
-                    <span itemprop="name">个人感想</span>
+                  <a href="/categories/deep-learning/" itemprop="url" rel="index">
+                    <span itemprop="name">deep learning</span>
                   </a>
                 </span>
 
@@ -428,7 +428,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  1.4k
+                  1.3k
                 </span>
               
 
@@ -444,7 +444,7 @@
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
                 <span title="Reading time">
-                  4
+                  6
                 </span>
               
             </div>
@@ -465,13 +465,136 @@
       
 
       
-        <p>一周更一集的电视剧都没有跟上，每天只能在午饭时间看一些，总算也是在结局之前追上了进度。这篇早就想写的文章也拖到电视剧快结束，拖延症也是够严重的，第一篇更新的博客，说说最近的感触。</p>
-<p>整个剧像一场辩论，把所有的人和所有的事都推向了两个极端：处处为他人着想和处处由着自己性子。也就如辩论一样，没有谁更对，只有你更倾向谁。现实中我们所有人大约都处在中间，很多时候的妥协，可能某天面对某人或者某件事就不想再妥协下去，偶尔选择抗争一下。但是真能完全按照自己意愿而活的人，我不敢完全说是没有，但是我想应该很少很少。想说什么就说，想做什么就做，不怕别人怎么看你，也不怕会对其他人造成伤害，像野兽一般生活，简单粗暴，很酷，但也会很孤独。就像《奇葩说》上薛教授和康永哥一样，人生观不同而已。道理我都懂，但是我不想那么活，仅此而已。<br><a id="more"></a></p>
-<p>大约我们都是做不了野兽的，生在这个社会，再怎么洒脱，你也离不开生而为人的牵挂。所以我们应该允许自己某次的放纵，不再受人摆布，受人牵制，做点自己想做的，不顾外界的一切条件，只关注自己，自己的心，也就是我们常常说得疯狂一下吧。有时候常常会觉得自己辜负了别人的期待，这些年开始慢慢意识到，人大多数时间都应该为自己而活，人生，一次而已，妥协到最后你也不可能让所有人都满意，还不如一开始就告诉他们，对不起，我不是这样，和你们想象的不一样。但是很可惜，我还做不到对平凡的自己妥协，去接受自己就是那么简单和平凡的人，也要走大多人走的路，过那样的一生，我不甘心。</p>
-<p>我特别不喜欢这一季的《奇葩说》，就好像所有的观点冲突都集中在感情上似的。但是我很喜欢那期讨论“选择高薪不喜欢的工作和选择低薪喜欢工作”。我从那一场看到了不同阶层人对于事情理解上的巨大差异，李思桓是典型的工薪阶层的代表，当我们还在温饱线上挣扎，当我们还在计较吃了上顿没下顿，下个月的房租从哪儿出的时候，是没有资格去选择什么喜欢和不喜欢的。然而像高晓松这种知识分子家庭，起点就与常人不同，他自是不用考虑任何生活的苟且，他看到的肯定只是诗和远方，所以不必选。这个题目，实际是为这些处在中间位置，基本衣食无忧，还有些闲钱可以追求自己梦想的人，不求大富大贵，还有机会看看诗和远方的。不是所有人都有选择的机会，所以我现在常常为自己可以有选择而感到庆幸，也在为了让自己一直有选择而努力。</p>
-<p>看神奇动物2之前就准备开始重新过一遍Harry Potter，突然意识到其实自己爱的不是这个故事，是J.K. Rowling构建的这个世界。之前看过她的演讲，她是一个对人权，平等和和平有着深刻理解和追求的人。我在重温的过程中一直在想Harry Potter到底想传达给我们的是什么？一个没有出身、种族、血缘歧视的世界，一种勇敢、坚定和充满爱的品质，还有一种面对真理和正义的自我牺牲精神。我再看的时候对第四部中Harry和Voldemort第一次的正面对决印象深刻，一开始Harry躲在一个石头后面，当Voldemort叫他出来受死的时候，Harry只是思考了很短的时间就站了出来，我现在在想，一个14岁的孩子要内心多么强大才有力量为了正义和真理选择付出自己的生命。恐惧换来的臣服永远只是暂时的，只有内心的信任才是永久的。</p>
-<p>我不知道这个剧的结局会是什么，但是我喜欢日剧的一个原因是，日剧丧得很真实。为什么我们就接受不了本来就有很多的无能为力呢？去面对，去接受，难道不是一种勇气和能力么？我想，我可能没办法成为所谓野兽。我还是对这个世界的人和事抱着最大的善意和期待。我相信童话，相信超级英雄，相信魔法，也许这些不是真实存在的，但是我相信那些作品里所传达的：正义，勇敢，正直，坚持。我知道作为人，我们对这个世界还有很多很多的无能为力，但是至少作为人，我还想活出我作为人的一点点尊严。只愿生活永远不要把我推向野兽般生活的绝境。</p>
-
+        <blockquote>
+<p>这个是写GAN论文的作者Ian Goodfellow的deep learning书中线性代数部分<br>由于比较懒的原因，就是将公式用代码实现了，并没有讲解和太多的翻译，具体的数学部分的内容还需要移步到界面看<a href="http://www.deeplearningbook.org/" target="_blank" rel="noopener">Deep Learning</a><br>另，这本书的数学部分毕竟也是为深度学习打基础的，讲解不算细致，如果有看不懂的，还是需要找一本线性代数的书来看</p>
+</blockquote>
+<h2 id="Scalars-Vectors-Matrices-and-Tensors"><a href="#Scalars-Vectors-Matrices-and-Tensors" class="headerlink" title="Scalars Vectors Matrices and Tensors"></a>Scalars Vectors Matrices and Tensors</h2><h2 id="标量，-向量，矩阵和张量"><a href="#标量，-向量，矩阵和张量" class="headerlink" title="标量， 向量，矩阵和张量"></a>标量， 向量，矩阵和张量</h2><a id="more"></a>
+<h3 id="Scalars"><a href="#Scalars" class="headerlink" title="Scalars"></a>Scalars</h3><blockquote>
+<p>标量就是单独的一个数字，后面将用小写字母的斜体表示<br>标量需要定义作用域，如：$s \in R$ or $s \in N$<br>R 为实数域，N 为自然数域</p>
+</blockquote>
+<h4 id="延伸内容"><a href="#延伸内容" class="headerlink" title="延伸内容"></a>延伸内容</h4><ol>
+<li>实数：相对与虚数，是有理数和无理数的总和</li>
+<li>自然数：正整数</li>
+<li>有理数：有限小数位或者无限循环小数</li>
+<li>无理数：无限不循环小数</li>
+<li>虚数：$ -1 = i^2 $</li>
+</ol>
+<h3 id="Vectors"><a href="#Vectors" class="headerlink" title="Vectors"></a>Vectors</h3><blockquote>
+<p>向量是一组数字，我们也需要描述存储在向量里的数字的类型<br>如果向量中的每一个元素都属于R，这个向量中有n个元素，那么这个向量就是n个R的笛卡尔积的集合</p>
+</blockquote>
+<h4 id="笛卡儿积（直积）"><a href="#笛卡儿积（直积）" class="headerlink" title="笛卡儿积（直积）"></a>笛卡儿积（直积）</h4><blockquote>
+<p>有序对的集合，如X * Y 其中有序对是第一个对象X的成员，第二个对象是Y的成员<br>假设X =&#123;x1,x2&#125; Y=&#123;y1,y2&#125; 则笛卡儿积Z为&#123;&#123;x1,y1&#125;,&#123;x1,y2&#125;,&#123;x2,y1&#125;,&#123;x2,y2&#125;&#125;</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">x = np.arange(<span class="number">10</span>)</span><br><span class="line">print(x)</span><br></pre></td></tr></table></figure>
+<pre><code>[0 1 2 3 4 5 6 7 8 9]
+</code></pre><h3 id="Matrices"><a href="#Matrices" class="headerlink" title="Matrices"></a>Matrices</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">A = np.arange(<span class="number">9</span>).reshape(<span class="number">3</span>,<span class="number">3</span>)</span><br><span class="line">print(A)</span><br></pre></td></tr></table></figure>
+<pre><code>[[0 1 2]
+ [3 4 5]
+ [6 7 8]]
+</code></pre><ol>
+<li>矩阵的转置</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">A1 = np.transpose(A)</span><br><span class="line">print(A1)</span><br></pre></td></tr></table></figure>
+<pre><code>[[0 3 6]
+ [1 4 7]
+ [2 5 8]]
+</code></pre><ol start="2">
+<li>Broadcasting</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">B = A + <span class="number">1</span></span><br><span class="line">print(B)</span><br></pre></td></tr></table></figure>
+<pre><code>[[1 2 3]
+ [4 5 6]
+ [7 8 9]]
+</code></pre><ol start="3">
+<li>加法(必须have the same shape)</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">C = A + B</span><br><span class="line">print(C)</span><br></pre></td></tr></table></figure>
+<pre><code>[[ 1  3  5]
+ [ 7  9 11]
+ [13 15 17]]
+</code></pre><h3 id="Tensors"><a href="#Tensors" class="headerlink" title="Tensors"></a>Tensors</h3><blockquote>
+<p>在某种情况下，我们将需要不止两个轴，张量可被布置在可变轴的网格上的数字阵列，即张量可以有多个维度</p>
+</blockquote>
+<h3 id="Multiplying-Matrices-and-Vectors"><a href="#Multiplying-Matrices-and-Vectors" class="headerlink" title="Multiplying Matrices and Vectors"></a>Multiplying Matrices and Vectors</h3><h4 id="两个矩阵相乘"><a href="#两个矩阵相乘" class="headerlink" title="两个矩阵相乘"></a>两个矩阵相乘</h4><blockquote>
+<p>m <em> n的矩阵和 n </em> p的矩阵相乘，会得到一个m * p的矩阵 matrix product</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">A = np.arange(<span class="number">15</span>).reshape(<span class="number">3</span>,<span class="number">5</span>)</span><br><span class="line">B = np.arange(<span class="number">10</span>).reshape(<span class="number">5</span>,<span class="number">2</span>)</span><br><span class="line">C = np.dot(A, B)</span><br><span class="line">print(C)</span><br></pre></td></tr></table></figure>
+<pre><code>[[ 60  70]
+ [160 195]
+ [260 320]]
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Hadamard product</span></span><br><span class="line">A = np.arange(<span class="number">9</span>).reshape(<span class="number">3</span>,<span class="number">3</span>)</span><br><span class="line">B = np.arange(<span class="number">2.0</span>, <span class="number">11.0</span>).reshape(<span class="number">3</span>,<span class="number">3</span>)</span><br><span class="line">C = A * B</span><br><span class="line">print(C)</span><br></pre></td></tr></table></figure>
+<pre><code>[[  0.   3.   8.]
+ [ 15.  24.  35.]
+ [ 48.  63.  80.]]
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># distributive 乘法分配律</span></span><br><span class="line">D = np.dot(A, (B+C))</span><br><span class="line">print(D)</span><br><span class="line">E = np.dot(A, B) + np.dot(A, C)</span><br><span class="line">print(E)</span><br></pre></td></tr></table></figure>
+<pre><code>[[  132.   174.   222.]
+ [  366.   498.   654.]
+ [  600.   822.  1086.]]
+[[  132.   174.   222.]
+ [  366.   498.   654.]
+ [  600.   822.  1086.]]
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 交换律不行</span></span><br><span class="line">C = np.dot(A, B)</span><br><span class="line">print(C)</span><br><span class="line">D = np.dot(B, A)</span><br><span class="line">print(D)</span><br></pre></td></tr></table></figure>
+<pre><code>[[  21.   24.   27.]
+ [  66.   78.   90.]
+ [ 111.  132.  153.]]
+[[  33.   42.   51.]
+ [  60.   78.   96.]
+ [  87.  114.  141.]]
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 但是Vectors可以</span></span><br><span class="line">a = np.arange(<span class="number">5</span>,<span class="number">20</span>,<span class="number">2</span>)</span><br><span class="line">b = np.arange(<span class="number">3</span>,<span class="number">40</span>,<span class="number">5</span>)</span><br><span class="line">c = np.dot(a,b)</span><br><span class="line">print(c)</span><br><span class="line">d = np.dot(b,a)</span><br><span class="line">print(d)</span><br></pre></td></tr></table></figure>
+<pre><code>2388
+2388
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># transpose</span></span><br><span class="line">C = np.transpose(np.dot(A, B))</span><br><span class="line">print(C)</span><br><span class="line">D = np.dot(np.transpose(B), np.transpose(A)) </span><br><span class="line">print(D)</span><br></pre></td></tr></table></figure>
+<pre><code>[[  21.   66.  111.]
+ [  24.   78.  132.]
+ [  27.   90.  153.]]
+[[  21.   66.  111.]
+ [  24.   78.  132.]
+ [  27.   90.  153.]]
+</code></pre><h3 id="单位矩阵-Identity-Matrices-和逆矩阵-Inverse-Matrices"><a href="#单位矩阵-Identity-Matrices-和逆矩阵-Inverse-Matrices" class="headerlink" title="单位矩阵(Identity Matrices)和逆矩阵 (Inverse Matrices)"></a>单位矩阵(Identity Matrices)和逆矩阵 (Inverse Matrices)</h3><h4 id="单位矩阵就是当我们以这个矩阵乘以Vector的时候，不会改变任何的Vector，即沿着主对角线的项都是1"><a href="#单位矩阵就是当我们以这个矩阵乘以Vector的时候，不会改变任何的Vector，即沿着主对角线的项都是1" class="headerlink" title="单位矩阵就是当我们以这个矩阵乘以Vector的时候，不会改变任何的Vector，即沿着主对角线的项都是1"></a>单位矩阵就是当我们以这个矩阵乘以Vector的时候，不会改变任何的Vector，即沿着主对角线的项都是1</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># identity matrice</span></span><br><span class="line">I = np.eye(<span class="number">3</span>) </span><br><span class="line">print(I)</span><br><span class="line">A = np.matrix([[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>],[<span class="number">2</span>,<span class="number">2</span>,<span class="number">1</span>],[<span class="number">3</span>,<span class="number">4</span>,<span class="number">3</span>]])</span><br><span class="line">inverseA = np.linalg.inv(A)</span><br><span class="line">print(A)</span><br><span class="line">print(inverseA)</span><br><span class="line">print(np.dot(inverseA, A))</span><br></pre></td></tr></table></figure>
+<pre><code>[[ 1.  0.  0.]
+ [ 0.  1.  0.]
+ [ 0.  0.  1.]]
+[[1 2 3]
+ [2 2 1]
+ [3 4 3]]
+[[ 1.   3.  -2. ]
+ [-1.5 -3.   2.5]
+ [ 1.   1.  -1. ]]
+[[  1.00000000e+00   0.00000000e+00   0.00000000e+00]
+ [  4.44089210e-16   1.00000000e+00   0.00000000e+00]
+ [  4.44089210e-16   0.00000000e+00   1.00000000e+00]]
+</code></pre><h3 id="Norms"><a href="#Norms" class="headerlink" title="Norms"></a>Norms</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># L2 norm(Euclidean norm)</span></span><br><span class="line">l2 = np.linalg.norm(A)</span><br><span class="line">print(l2)</span><br><span class="line"><span class="comment"># L1 norm</span></span><br><span class="line">l1 = np.linalg.norm(A, ord=<span class="number">2</span>)</span><br><span class="line">print(l1)</span><br><span class="line"><span class="comment"># max norm</span></span><br><span class="line">lMax = np.linalg.norm(A, ord=np.inf)</span><br><span class="line">print(lMax)</span><br><span class="line"><span class="comment"># Frobenius norm</span></span><br><span class="line">lFro = np.linalg.norm(A, ord = <span class="string">"fro"</span>)</span><br><span class="line">print(lFro)</span><br></pre></td></tr></table></figure>
+<pre><code>7.54983443527
+7.38022617586
+10.0
+7.54983443527
+</code></pre><h3 id="特征值和特征向量"><a href="#特征值和特征向量" class="headerlink" title="特征值和特征向量"></a>特征值和特征向量</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">D,V = np.linalg.eig(A)</span><br><span class="line">print(D)</span><br><span class="line">print(V)</span><br></pre></td></tr></table></figure>
+<pre><code>[ 6.91016988+0.j        -0.45508494+0.2869254j -0.45508494-0.2869254j]
+[[ 0.51686650+0.j          0.75510960+0.j          0.75510960-0.j        ]
+ [ 0.36794861+0.j         -0.61728707-0.1394167j  -0.61728707+0.1394167j ]
+ [ 0.77295720+0.j          0.04527518+0.16516451j  0.04527518-0.16516451j]]
+</code></pre><h3 id="Singular-Value-Decomposition-SVD"><a href="#Singular-Value-Decomposition-SVD" class="headerlink" title="Singular Value Decomposition(SVD)"></a>Singular Value Decomposition(SVD)</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">U, sigma, VT = np.linalg.svd(A)</span><br><span class="line">print(U, sigma, VT)</span><br></pre></td></tr></table></figure>
+<pre><code>[[-0.47624692  0.81012706 -0.3418816 ]
+ [-0.38909719 -0.54282768 -0.74427246]
+ [-0.78853805 -0.22143229  0.57373817]] [ 7.38022618  1.58206216  0.17129188] [[-0.49050738 -0.66188221 -0.56684605]
+ [-0.59405073 -0.22194477  0.77320388]
+ [-0.63757841  0.71599753 -0.28432606]]
+</code></pre><h3 id="Moore-Penrose-pseudoinverse"><a href="#Moore-Penrose-pseudoinverse" class="headerlink" title="Moore-Penrose pseudoinverse"></a>Moore-Penrose pseudoinverse</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">B = np.linalg.pinv(A)</span><br><span class="line">print(B)</span><br></pre></td></tr></table></figure>
+<pre><code>[[ 1.   3.  -2. ]
+ [-1.5 -3.   2.5]
+ [ 1.   1.  -1. ]]
+</code></pre><h3 id="The-Trace-Operator"><a href="#The-Trace-Operator" class="headerlink" title="The Trace Operator"></a>The Trace Operator</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">TrA = np.trace(A)</span><br><span class="line">print(TrA)</span><br><span class="line">TA = np.transpose(A)</span><br><span class="line">print(np.allclose(TrA, np.trace(TA)))</span><br><span class="line">print(np.allclose(np.dot(B, A), np.dot(A, B)))</span><br></pre></td></tr></table></figure>
+<pre><code>6
+True
+True
+</code></pre><h3 id="The-Determinant-行列式"><a href="#The-Determinant-行列式" class="headerlink" title="The Determinant(行列式)"></a>The Determinant(行列式)</h3><p>行列式等于矩阵所有特征值的乘积（所以行列式实质是一个值）</p>
+<h4 id="Principal-Components-Analysis-PCA"><a href="#Principal-Components-Analysis-PCA" class="headerlink" title="Principal Components Analysis(PCA)"></a>Principal Components Analysis(PCA)</h4><p>实际有多种实现方式</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">C = np.array([[<span class="number">-1</span>,<span class="number">-1</span>,<span class="number">0</span>,<span class="number">2</span>,<span class="number">1</span>],[<span class="number">2</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">-1</span>,<span class="number">-1</span>],[<span class="number">2</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">0</span>]],dtype=<span class="string">'float64'</span>)</span><br><span class="line"><span class="comment"># mean</span></span><br><span class="line">t = np.mean(C, axis=<span class="number">0</span>)</span><br><span class="line">p, n = np.shape(C)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(p):</span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> range(n):</span><br><span class="line">        C[i,j] = float(C[i,j]-t[j])</span><br><span class="line"><span class="comment"># covariance 协方差</span></span><br><span class="line">cov_C = np.dot(C.T, C)/(p<span class="number">-1</span>)</span><br><span class="line"><span class="comment"># eigvalues and eigenvectors 特征值和特征向量</span></span><br><span class="line">U, V = np.linalg.eigh(cov_C)</span><br><span class="line"><span class="comment"># resort</span></span><br><span class="line">U = U[::<span class="number">-1</span>]</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(n):</span><br><span class="line">    V[i,:] = V[i,:][::<span class="number">-1</span>]</span><br><span class="line"><span class="comment"># 降到二维</span></span><br><span class="line">v = V[:,:<span class="number">2</span>]</span><br><span class="line">T = np.dot(C, v)</span><br><span class="line">print(T)</span><br></pre></td></tr></table></figure>
+<pre><code>[[ 2.6838453  -0.36098161]
+ [-2.09303664 -0.78689112]
+ [-0.59080867  1.14787272]]
+</code></pre>
       
     </div>
     
@@ -488,7 +611,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/杂/" rel="tag"># 杂</a>
+            <a href="/tags/mathematics/" rel="tag"># mathematics</a>
           
         </div>
       
@@ -501,15 +624,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2018/12/06/无法成为野兽的我们/" rel="next" title="无法成为野兽的我们">
+                <i class="fa fa-chevron-left"></i> 无法成为野兽的我们
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/12/16/linear-algebra/" rel="prev" title="linear algebra">
-                linear algebra <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -566,8 +689,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -650,6 +782,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Scalars-Vectors-Matrices-and-Tensors"><span class="nav-number">1.</span> <span class="nav-text">Scalars Vectors Matrices and Tensors</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#标量，-向量，矩阵和张量"><span class="nav-number">2.</span> <span class="nav-text">标量， 向量，矩阵和张量</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Scalars"><span class="nav-number">2.1.</span> <span class="nav-text">Scalars</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#延伸内容"><span class="nav-number">2.1.1.</span> <span class="nav-text">延伸内容</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Vectors"><span class="nav-number">2.2.</span> <span class="nav-text">Vectors</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#笛卡儿积（直积）"><span class="nav-number">2.2.1.</span> <span class="nav-text">笛卡儿积（直积）</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Matrices"><span class="nav-number">2.3.</span> <span class="nav-text">Matrices</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Tensors"><span class="nav-number">2.4.</span> <span class="nav-text">Tensors</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Multiplying-Matrices-and-Vectors"><span class="nav-number">2.5.</span> <span class="nav-text">Multiplying Matrices and Vectors</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#两个矩阵相乘"><span class="nav-number">2.5.1.</span> <span class="nav-text">两个矩阵相乘</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#单位矩阵-Identity-Matrices-和逆矩阵-Inverse-Matrices"><span class="nav-number">2.6.</span> <span class="nav-text">单位矩阵(Identity Matrices)和逆矩阵 (Inverse Matrices)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#单位矩阵就是当我们以这个矩阵乘以Vector的时候，不会改变任何的Vector，即沿着主对角线的项都是1"><span class="nav-number">2.6.1.</span> <span class="nav-text">单位矩阵就是当我们以这个矩阵乘以Vector的时候，不会改变任何的Vector，即沿着主对角线的项都是1</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Norms"><span class="nav-number">2.7.</span> <span class="nav-text">Norms</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#特征值和特征向量"><span class="nav-number">2.8.</span> <span class="nav-text">特征值和特征向量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Singular-Value-Decomposition-SVD"><span class="nav-number">2.9.</span> <span class="nav-text">Singular Value Decomposition(SVD)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Moore-Penrose-pseudoinverse"><span class="nav-number">2.10.</span> <span class="nav-text">Moore-Penrose pseudoinverse</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#The-Trace-Operator"><span class="nav-number">2.11.</span> <span class="nav-text">The Trace Operator</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#The-Determinant-行列式"><span class="nav-number">2.12.</span> <span class="nav-text">The Determinant(行列式)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Principal-Components-Analysis-PCA"><span class="nav-number">2.12.1.</span> <span class="nav-text">Principal Components Analysis(PCA)</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -1165,7 +1313,7 @@
         onPopupClose();
       }
     });
-  </script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  </script>
 
 
 
@@ -1181,6 +1329,26 @@
   
 
   
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
   
 
 
