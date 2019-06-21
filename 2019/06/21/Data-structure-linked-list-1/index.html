@@ -106,7 +106,7 @@
 
 
 
-  <meta name="keywords" content="Mathematics,">
+  <meta name="keywords" content="linked_list,">
 
 
 
@@ -119,18 +119,18 @@
 
 
 
-<meta name="description" content="这个是写GAN论文的作者Ian Goodfellow的deep learning书中线性代数部分由于比较懒的原因，就是将公式用代码实现了，并没有讲解和太多的翻译，具体的数学部分的内容还需要移步到界面看Deep Learning另，这本书的数学部分毕竟也是为深度学习打基础的，讲解不算细致，如果有看不懂的，还是需要找一本线性代数的书来看  Scalars Vectors Matrices and T">
-<meta name="keywords" content="Mathematics">
+<meta name="description" content="写在开始我相信可能很多人都跟我一样，不一定是科班出身做的开发。写了多年代码，自以为前后端，数据库，运维之类的都做过一些，但是慢慢发现如果想成为一个有追求的程序员，想写出更好更完美的代码，有些基础是不得不补的。之前工作很忙，读了PhD之后觉得可以时间补充一些知识，包括数据结构和算法，程序设计和架构，软件工程等内容，希望可以持续更新下去（先立flag）。 链表单链表实现Code">
+<meta name="keywords" content="linked_list">
 <meta property="og:type" content="article">
-<meta property="og:title" content="linear algebra">
-<meta property="og:url" content="http://stefaniezhao.xyz/2018/12/16/linear-algebra/index.html">
+<meta property="og:title" content="Data structure - linked_list(1)">
+<meta property="og:url" content="http://stefaniezhao.xyz/2019/06/21/Data-structure-linked-list-1/index.html">
 <meta property="og:site_name" content="Platform Nine and Three-Quarters">
-<meta property="og:description" content="这个是写GAN论文的作者Ian Goodfellow的deep learning书中线性代数部分由于比较懒的原因，就是将公式用代码实现了，并没有讲解和太多的翻译，具体的数学部分的内容还需要移步到界面看Deep Learning另，这本书的数学部分毕竟也是为深度学习打基础的，讲解不算细致，如果有看不懂的，还是需要找一本线性代数的书来看  Scalars Vectors Matrices and T">
+<meta property="og:description" content="写在开始我相信可能很多人都跟我一样，不一定是科班出身做的开发。写了多年代码，自以为前后端，数据库，运维之类的都做过一些，但是慢慢发现如果想成为一个有追求的程序员，想写出更好更完美的代码，有些基础是不得不补的。之前工作很忙，读了PhD之后觉得可以时间补充一些知识，包括数据结构和算法，程序设计和架构，软件工程等内容，希望可以持续更新下去（先立flag）。 链表单链表实现Code">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-06-21T19:01:17.311Z">
+<meta property="og:updated_time" content="2019-06-21T19:30:43.709Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="linear algebra">
-<meta name="twitter:description" content="这个是写GAN论文的作者Ian Goodfellow的deep learning书中线性代数部分由于比较懒的原因，就是将公式用代码实现了，并没有讲解和太多的翻译，具体的数学部分的内容还需要移步到界面看Deep Learning另，这本书的数学部分毕竟也是为深度学习打基础的，讲解不算细致，如果有看不懂的，还是需要找一本线性代数的书来看  Scalars Vectors Matrices and T">
+<meta name="twitter:title" content="Data structure - linked_list(1)">
+<meta name="twitter:description" content="写在开始我相信可能很多人都跟我一样，不一定是科班出身做的开发。写了多年代码，自以为前后端，数据库，运维之类的都做过一些，但是慢慢发现如果想成为一个有追求的程序员，想写出更好更完美的代码，有些基础是不得不补的。之前工作很忙，读了PhD之后觉得可以时间补充一些知识，包括数据结构和算法，程序设计和架构，软件工程等内容，希望可以持续更新下去（先立flag）。 链表单链表实现Code">
 
 
 
@@ -160,13 +160,13 @@
 
 
 
-  <link rel="canonical" href="http://stefaniezhao.xyz/2018/12/16/linear-algebra/">
+  <link rel="canonical" href="http://stefaniezhao.xyz/2019/06/21/Data-structure-linked-list-1/">
 
 
 
 
 
-  <title>linear algebra | Platform Nine and Three-Quarters</title>
+  <title>Data structure - linked_list(1) | Platform Nine and Three-Quarters</title>
   
 
 
@@ -345,7 +345,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://stefaniezhao.xyz/2018/12/16/linear-algebra/">
+    <link itemprop="mainEntityOfPage" href="http://stefaniezhao.xyz/2019/06/21/Data-structure-linked-list-1/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Stefanie Zhao">
@@ -362,7 +362,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">linear algebra</h1>
+          <h1 class="post-title" itemprop="name headline">Data structure - linked_list(1)</h1>
         
 
         <div class="post-meta">
@@ -374,8 +374,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-12-16T16:58:08+01:00">
-                2018-12-16
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-06-21T21:03:03+02:00">
+                2019-06-21
               </time>
             
 
@@ -397,8 +397,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/Deep-learning/" itemprop="url" rel="index">
-                    <span itemprop="name">Deep learning</span>
+                  <a href="/categories/Data-Structure/" itemprop="url" rel="index">
+                    <span itemprop="name">Data Structure</span>
                   </a>
                 </span>
 
@@ -428,7 +428,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  1.3k
+                  476
                 </span>
               
 
@@ -444,7 +444,7 @@
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
                 <span title="Reading time">
-                  6
+                  1
                 </span>
               
             </div>
@@ -465,136 +465,27 @@
       
 
       
-        <blockquote>
-<p>这个是写GAN论文的作者Ian Goodfellow的deep learning书中线性代数部分<br>由于比较懒的原因，就是将公式用代码实现了，并没有讲解和太多的翻译，具体的数学部分的内容还需要移步到界面看<a href="http://www.deeplearningbook.org/" target="_blank" rel="noopener">Deep Learning</a><br>另，这本书的数学部分毕竟也是为深度学习打基础的，讲解不算细致，如果有看不懂的，还是需要找一本线性代数的书来看</p>
-</blockquote>
-<h2 id="Scalars-Vectors-Matrices-and-Tensors"><a href="#Scalars-Vectors-Matrices-and-Tensors" class="headerlink" title="Scalars Vectors Matrices and Tensors"></a>Scalars Vectors Matrices and Tensors</h2><h2 id="标量，-向量，矩阵和张量"><a href="#标量，-向量，矩阵和张量" class="headerlink" title="标量， 向量，矩阵和张量"></a>标量， 向量，矩阵和张量</h2><a id="more"></a>
-<h3 id="Scalars"><a href="#Scalars" class="headerlink" title="Scalars"></a>Scalars</h3><blockquote>
-<p>标量就是单独的一个数字，后面将用小写字母的斜体表示<br>标量需要定义作用域，如：$s \in R$ or $s \in N$<br>R 为实数域，N 为自然数域</p>
-</blockquote>
-<h4 id="延伸内容"><a href="#延伸内容" class="headerlink" title="延伸内容"></a>延伸内容</h4><ol>
-<li>实数：相对与虚数，是有理数和无理数的总和</li>
-<li>自然数：正整数</li>
-<li>有理数：有限小数位或者无限循环小数</li>
-<li>无理数：无限不循环小数</li>
-<li>虚数：$ -1 = i^2 $</li>
+        <h2 id="写在开始"><a href="#写在开始" class="headerlink" title="写在开始"></a>写在开始</h2><p>我相信可能很多人都跟我一样，不一定是科班出身做的开发。写了多年代码，自以为前后端，数据库，运维之类的都做过一些，但是慢慢发现如果想成为一个有追求的程序员，想写出更好更完美的代码，有些基础是不得不补的。之前工作很忙，读了PhD之后觉得可以时间补充一些知识，包括数据结构和算法，程序设计和架构，软件工程等内容，希望可以持续更新下去（先立flag）。</p>
+<h2 id="链表"><a href="#链表" class="headerlink" title="链表"></a>链表</h2><h3 id="单链表实现"><a href="#单链表实现" class="headerlink" title="单链表实现"></a>单链表实现</h3><p><a href="https://github.com/stefanieZhao77/Data-Structures-and-Algorithms/blob/master/linked_list/single_list.cpp" target="_blank" rel="noopener">Code</a></p>
+<a id="more"></a>
+<p><strong>代码主要实现了以下几个功能：</strong></p>
+<ol>
+<li>构造node节点</li>
+<li>基础的增删改查和显示操作<br>注：如有多个目标值，默认修改操作为第一个目标值</li>
 </ol>
-<h3 id="Vectors"><a href="#Vectors" class="headerlink" title="Vectors"></a>Vectors</h3><blockquote>
-<p>向量是一组数字，我们也需要描述存储在向量里的数字的类型<br>如果向量中的每一个元素都属于R，这个向量中有n个元素，那么这个向量就是n个R的笛卡尔积的集合</p>
-</blockquote>
-<h4 id="笛卡儿积（直积）"><a href="#笛卡儿积（直积）" class="headerlink" title="笛卡儿积（直积）"></a>笛卡儿积（直积）</h4><blockquote>
-<p>有序对的集合，如X * Y 其中有序对是第一个对象X的成员，第二个对象是Y的成员<br>假设X =&#123;x1,x2&#125; Y=&#123;y1,y2&#125; 则笛卡儿积Z为&#123;&#123;x1,y1&#125;,&#123;x1,y2&#125;,&#123;x2,y1&#125;,&#123;x2,y2&#125;&#125;</p>
-</blockquote>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">x = np.arange(<span class="number">10</span>)</span><br><span class="line">print(x)</span><br></pre></td></tr></table></figure>
-<pre><code>[0 1 2 3 4 5 6 7 8 9]
-</code></pre><h3 id="Matrices"><a href="#Matrices" class="headerlink" title="Matrices"></a>Matrices</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">A = np.arange(<span class="number">9</span>).reshape(<span class="number">3</span>,<span class="number">3</span>)</span><br><span class="line">print(A)</span><br></pre></td></tr></table></figure>
-<pre><code>[[0 1 2]
- [3 4 5]
- [6 7 8]]
-</code></pre><ol>
-<li>矩阵的转置</li>
+<hr>
+<p><strong>主要点：</strong></p>
+<ol>
+<li>链表是以多个node节点互相连接的，每个节点中next实际存的是下一个节点所在的内存地址，所以各个node不是连续的，不能通过连续地寻址方式进行查找</li>
+<li>val是实际节点中的存储的值</li>
+<li>insert方法主要是如果是第一个节点，就直接新建一个节点赋值，并将next指向空；如果不是第一个节点，则将现在的第一个节点指向新建的节点，给新建的节点赋值，并将新建的节点指向空</li>
+<li>删除节点其实就是将上一个节点的next指向下下个节点（即跳过要删除的节点），实际上如果有自动回收机制则不必手动删除该节点，只需要更改指向就可</li>
+<li>replace就是顺序向下查找到目标节点，并赋值</li>
+<li>search与replace差不多，主要在查询</li>
+<li>打印链表需要循环读取所有链表值</li>
 </ol>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">A1 = np.transpose(A)</span><br><span class="line">print(A1)</span><br></pre></td></tr></table></figure>
-<pre><code>[[0 3 6]
- [1 4 7]
- [2 5 8]]
-</code></pre><ol start="2">
-<li>Broadcasting</li>
-</ol>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">B = A + <span class="number">1</span></span><br><span class="line">print(B)</span><br></pre></td></tr></table></figure>
-<pre><code>[[1 2 3]
- [4 5 6]
- [7 8 9]]
-</code></pre><ol start="3">
-<li>加法(必须have the same shape)</li>
-</ol>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">C = A + B</span><br><span class="line">print(C)</span><br></pre></td></tr></table></figure>
-<pre><code>[[ 1  3  5]
- [ 7  9 11]
- [13 15 17]]
-</code></pre><h3 id="Tensors"><a href="#Tensors" class="headerlink" title="Tensors"></a>Tensors</h3><blockquote>
-<p>在某种情况下，我们将需要不止两个轴，张量可被布置在可变轴的网格上的数字阵列，即张量可以有多个维度</p>
-</blockquote>
-<h3 id="Multiplying-Matrices-and-Vectors"><a href="#Multiplying-Matrices-and-Vectors" class="headerlink" title="Multiplying Matrices and Vectors"></a>Multiplying Matrices and Vectors</h3><h4 id="两个矩阵相乘"><a href="#两个矩阵相乘" class="headerlink" title="两个矩阵相乘"></a>两个矩阵相乘</h4><blockquote>
-<p>m <em> n的矩阵和 n </em> p的矩阵相乘，会得到一个m * p的矩阵 matrix product</p>
-</blockquote>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">A = np.arange(<span class="number">15</span>).reshape(<span class="number">3</span>,<span class="number">5</span>)</span><br><span class="line">B = np.arange(<span class="number">10</span>).reshape(<span class="number">5</span>,<span class="number">2</span>)</span><br><span class="line">C = np.dot(A, B)</span><br><span class="line">print(C)</span><br></pre></td></tr></table></figure>
-<pre><code>[[ 60  70]
- [160 195]
- [260 320]]
-</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Hadamard product</span></span><br><span class="line">A = np.arange(<span class="number">9</span>).reshape(<span class="number">3</span>,<span class="number">3</span>)</span><br><span class="line">B = np.arange(<span class="number">2.0</span>, <span class="number">11.0</span>).reshape(<span class="number">3</span>,<span class="number">3</span>)</span><br><span class="line">C = A * B</span><br><span class="line">print(C)</span><br></pre></td></tr></table></figure>
-<pre><code>[[  0.   3.   8.]
- [ 15.  24.  35.]
- [ 48.  63.  80.]]
-</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># distributive 乘法分配律</span></span><br><span class="line">D = np.dot(A, (B+C))</span><br><span class="line">print(D)</span><br><span class="line">E = np.dot(A, B) + np.dot(A, C)</span><br><span class="line">print(E)</span><br></pre></td></tr></table></figure>
-<pre><code>[[  132.   174.   222.]
- [  366.   498.   654.]
- [  600.   822.  1086.]]
-[[  132.   174.   222.]
- [  366.   498.   654.]
- [  600.   822.  1086.]]
-</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 交换律不行</span></span><br><span class="line">C = np.dot(A, B)</span><br><span class="line">print(C)</span><br><span class="line">D = np.dot(B, A)</span><br><span class="line">print(D)</span><br></pre></td></tr></table></figure>
-<pre><code>[[  21.   24.   27.]
- [  66.   78.   90.]
- [ 111.  132.  153.]]
-[[  33.   42.   51.]
- [  60.   78.   96.]
- [  87.  114.  141.]]
-</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 但是Vectors可以</span></span><br><span class="line">a = np.arange(<span class="number">5</span>,<span class="number">20</span>,<span class="number">2</span>)</span><br><span class="line">b = np.arange(<span class="number">3</span>,<span class="number">40</span>,<span class="number">5</span>)</span><br><span class="line">c = np.dot(a,b)</span><br><span class="line">print(c)</span><br><span class="line">d = np.dot(b,a)</span><br><span class="line">print(d)</span><br></pre></td></tr></table></figure>
-<pre><code>2388
-2388
-</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># transpose</span></span><br><span class="line">C = np.transpose(np.dot(A, B))</span><br><span class="line">print(C)</span><br><span class="line">D = np.dot(np.transpose(B), np.transpose(A)) </span><br><span class="line">print(D)</span><br></pre></td></tr></table></figure>
-<pre><code>[[  21.   66.  111.]
- [  24.   78.  132.]
- [  27.   90.  153.]]
-[[  21.   66.  111.]
- [  24.   78.  132.]
- [  27.   90.  153.]]
-</code></pre><h3 id="单位矩阵-Identity-Matrices-和逆矩阵-Inverse-Matrices"><a href="#单位矩阵-Identity-Matrices-和逆矩阵-Inverse-Matrices" class="headerlink" title="单位矩阵(Identity Matrices)和逆矩阵 (Inverse Matrices)"></a>单位矩阵(Identity Matrices)和逆矩阵 (Inverse Matrices)</h3><h4 id="单位矩阵就是当我们以这个矩阵乘以Vector的时候，不会改变任何的Vector，即沿着主对角线的项都是1"><a href="#单位矩阵就是当我们以这个矩阵乘以Vector的时候，不会改变任何的Vector，即沿着主对角线的项都是1" class="headerlink" title="单位矩阵就是当我们以这个矩阵乘以Vector的时候，不会改变任何的Vector，即沿着主对角线的项都是1"></a>单位矩阵就是当我们以这个矩阵乘以Vector的时候，不会改变任何的Vector，即沿着主对角线的项都是1</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># identity matrice</span></span><br><span class="line">I = np.eye(<span class="number">3</span>) </span><br><span class="line">print(I)</span><br><span class="line">A = np.matrix([[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>],[<span class="number">2</span>,<span class="number">2</span>,<span class="number">1</span>],[<span class="number">3</span>,<span class="number">4</span>,<span class="number">3</span>]])</span><br><span class="line">inverseA = np.linalg.inv(A)</span><br><span class="line">print(A)</span><br><span class="line">print(inverseA)</span><br><span class="line">print(np.dot(inverseA, A))</span><br></pre></td></tr></table></figure>
-<pre><code>[[ 1.  0.  0.]
- [ 0.  1.  0.]
- [ 0.  0.  1.]]
-[[1 2 3]
- [2 2 1]
- [3 4 3]]
-[[ 1.   3.  -2. ]
- [-1.5 -3.   2.5]
- [ 1.   1.  -1. ]]
-[[  1.00000000e+00   0.00000000e+00   0.00000000e+00]
- [  4.44089210e-16   1.00000000e+00   0.00000000e+00]
- [  4.44089210e-16   0.00000000e+00   1.00000000e+00]]
-</code></pre><h3 id="Norms"><a href="#Norms" class="headerlink" title="Norms"></a>Norms</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># L2 norm(Euclidean norm)</span></span><br><span class="line">l2 = np.linalg.norm(A)</span><br><span class="line">print(l2)</span><br><span class="line"><span class="comment"># L1 norm</span></span><br><span class="line">l1 = np.linalg.norm(A, ord=<span class="number">2</span>)</span><br><span class="line">print(l1)</span><br><span class="line"><span class="comment"># max norm</span></span><br><span class="line">lMax = np.linalg.norm(A, ord=np.inf)</span><br><span class="line">print(lMax)</span><br><span class="line"><span class="comment"># Frobenius norm</span></span><br><span class="line">lFro = np.linalg.norm(A, ord = <span class="string">"fro"</span>)</span><br><span class="line">print(lFro)</span><br></pre></td></tr></table></figure>
-<pre><code>7.54983443527
-7.38022617586
-10.0
-7.54983443527
-</code></pre><h3 id="特征值和特征向量"><a href="#特征值和特征向量" class="headerlink" title="特征值和特征向量"></a>特征值和特征向量</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">D,V = np.linalg.eig(A)</span><br><span class="line">print(D)</span><br><span class="line">print(V)</span><br></pre></td></tr></table></figure>
-<pre><code>[ 6.91016988+0.j        -0.45508494+0.2869254j -0.45508494-0.2869254j]
-[[ 0.51686650+0.j          0.75510960+0.j          0.75510960-0.j        ]
- [ 0.36794861+0.j         -0.61728707-0.1394167j  -0.61728707+0.1394167j ]
- [ 0.77295720+0.j          0.04527518+0.16516451j  0.04527518-0.16516451j]]
-</code></pre><h3 id="Singular-Value-Decomposition-SVD"><a href="#Singular-Value-Decomposition-SVD" class="headerlink" title="Singular Value Decomposition(SVD)"></a>Singular Value Decomposition(SVD)</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">U, sigma, VT = np.linalg.svd(A)</span><br><span class="line">print(U, sigma, VT)</span><br></pre></td></tr></table></figure>
-<pre><code>[[-0.47624692  0.81012706 -0.3418816 ]
- [-0.38909719 -0.54282768 -0.74427246]
- [-0.78853805 -0.22143229  0.57373817]] [ 7.38022618  1.58206216  0.17129188] [[-0.49050738 -0.66188221 -0.56684605]
- [-0.59405073 -0.22194477  0.77320388]
- [-0.63757841  0.71599753 -0.28432606]]
-</code></pre><h3 id="Moore-Penrose-pseudoinverse"><a href="#Moore-Penrose-pseudoinverse" class="headerlink" title="Moore-Penrose pseudoinverse"></a>Moore-Penrose pseudoinverse</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">B = np.linalg.pinv(A)</span><br><span class="line">print(B)</span><br></pre></td></tr></table></figure>
-<pre><code>[[ 1.   3.  -2. ]
- [-1.5 -3.   2.5]
- [ 1.   1.  -1. ]]
-</code></pre><h3 id="The-Trace-Operator"><a href="#The-Trace-Operator" class="headerlink" title="The Trace Operator"></a>The Trace Operator</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">TrA = np.trace(A)</span><br><span class="line">print(TrA)</span><br><span class="line">TA = np.transpose(A)</span><br><span class="line">print(np.allclose(TrA, np.trace(TA)))</span><br><span class="line">print(np.allclose(np.dot(B, A), np.dot(A, B)))</span><br></pre></td></tr></table></figure>
-<pre><code>6
-True
-True
-</code></pre><h3 id="The-Determinant-行列式"><a href="#The-Determinant-行列式" class="headerlink" title="The Determinant(行列式)"></a>The Determinant(行列式)</h3><p>行列式等于矩阵所有特征值的乘积（所以行列式实质是一个值）</p>
-<h4 id="Principal-Components-Analysis-PCA"><a href="#Principal-Components-Analysis-PCA" class="headerlink" title="Principal Components Analysis(PCA)"></a>Principal Components Analysis(PCA)</h4><p>实际有多种实现方式</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">C = np.array([[<span class="number">-1</span>,<span class="number">-1</span>,<span class="number">0</span>,<span class="number">2</span>,<span class="number">1</span>],[<span class="number">2</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">-1</span>,<span class="number">-1</span>],[<span class="number">2</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">0</span>]],dtype=<span class="string">'float64'</span>)</span><br><span class="line"><span class="comment"># mean</span></span><br><span class="line">t = np.mean(C, axis=<span class="number">0</span>)</span><br><span class="line">p, n = np.shape(C)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(p):</span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> range(n):</span><br><span class="line">        C[i,j] = float(C[i,j]-t[j])</span><br><span class="line"><span class="comment"># covariance 协方差</span></span><br><span class="line">cov_C = np.dot(C.T, C)/(p<span class="number">-1</span>)</span><br><span class="line"><span class="comment"># eigvalues and eigenvectors 特征值和特征向量</span></span><br><span class="line">U, V = np.linalg.eigh(cov_C)</span><br><span class="line"><span class="comment"># resort</span></span><br><span class="line">U = U[::<span class="number">-1</span>]</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(n):</span><br><span class="line">    V[i,:] = V[i,:][::<span class="number">-1</span>]</span><br><span class="line"><span class="comment"># 降到二维</span></span><br><span class="line">v = V[:,:<span class="number">2</span>]</span><br><span class="line">T = np.dot(C, v)</span><br><span class="line">print(T)</span><br></pre></td></tr></table></figure>
-<pre><code>[[ 2.6838453  -0.36098161]
- [-2.09303664 -0.78689112]
- [-0.59080867  1.14787272]]
-</code></pre>
+<p><a href="https://github.com/TheAlgorithms/C-Plus-Plus" target="_blank" rel="noopener">代码参考项目</a></p>
+
       
     </div>
     
@@ -611,7 +502,7 @@ True
       
         <div class="post-tags">
           
-            <a href="/tags/Mathematics/" rel="tag"># Mathematics</a>
+            <a href="/tags/linked-list/" rel="tag"># linked_list</a>
           
         </div>
       
@@ -624,8 +515,8 @@ True
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/12/06/无法成为野兽的我们/" rel="next" title="无法成为野兽的我们">
-                <i class="fa fa-chevron-left"></i> 无法成为野兽的我们
+              <a href="/2019/01/14/JS函数式编程指南笔记/" rel="next" title="JS函数式编程指南笔记">
+                <i class="fa fa-chevron-left"></i> JS函数式编程指南笔记
               </a>
             
           </div>
@@ -633,10 +524,6 @@ True
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/01/14/JS函数式编程指南笔记/" rel="prev" title="JS函数式编程指南笔记">
-                JS函数式编程指南笔记 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -796,7 +683,7 @@ True
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Scalars-Vectors-Matrices-and-Tensors"><span class="nav-number">1.</span> <span class="nav-text">Scalars Vectors Matrices and Tensors</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#标量，-向量，矩阵和张量"><span class="nav-number">2.</span> <span class="nav-text">标量， 向量，矩阵和张量</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Scalars"><span class="nav-number">2.1.</span> <span class="nav-text">Scalars</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#延伸内容"><span class="nav-number">2.1.1.</span> <span class="nav-text">延伸内容</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Vectors"><span class="nav-number">2.2.</span> <span class="nav-text">Vectors</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#笛卡儿积（直积）"><span class="nav-number">2.2.1.</span> <span class="nav-text">笛卡儿积（直积）</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Matrices"><span class="nav-number">2.3.</span> <span class="nav-text">Matrices</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Tensors"><span class="nav-number">2.4.</span> <span class="nav-text">Tensors</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Multiplying-Matrices-and-Vectors"><span class="nav-number">2.5.</span> <span class="nav-text">Multiplying Matrices and Vectors</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#两个矩阵相乘"><span class="nav-number">2.5.1.</span> <span class="nav-text">两个矩阵相乘</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#单位矩阵-Identity-Matrices-和逆矩阵-Inverse-Matrices"><span class="nav-number">2.6.</span> <span class="nav-text">单位矩阵(Identity Matrices)和逆矩阵 (Inverse Matrices)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#单位矩阵就是当我们以这个矩阵乘以Vector的时候，不会改变任何的Vector，即沿着主对角线的项都是1"><span class="nav-number">2.6.1.</span> <span class="nav-text">单位矩阵就是当我们以这个矩阵乘以Vector的时候，不会改变任何的Vector，即沿着主对角线的项都是1</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Norms"><span class="nav-number">2.7.</span> <span class="nav-text">Norms</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#特征值和特征向量"><span class="nav-number">2.8.</span> <span class="nav-text">特征值和特征向量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Singular-Value-Decomposition-SVD"><span class="nav-number">2.9.</span> <span class="nav-text">Singular Value Decomposition(SVD)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Moore-Penrose-pseudoinverse"><span class="nav-number">2.10.</span> <span class="nav-text">Moore-Penrose pseudoinverse</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#The-Trace-Operator"><span class="nav-number">2.11.</span> <span class="nav-text">The Trace Operator</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#The-Determinant-行列式"><span class="nav-number">2.12.</span> <span class="nav-text">The Determinant(行列式)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Principal-Components-Analysis-PCA"><span class="nav-number">2.12.1.</span> <span class="nav-text">Principal Components Analysis(PCA)</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#写在开始"><span class="nav-number">1.</span> <span class="nav-text">写在开始</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#链表"><span class="nav-number">2.</span> <span class="nav-text">链表</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#单链表实现"><span class="nav-number">2.1.</span> <span class="nav-text">单链表实现</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -1317,7 +1204,7 @@ True
         onPopupClose();
       }
     });
-  </script>
+  </script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 
 
@@ -1333,26 +1220,6 @@ True
   
 
   
-  
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Config({
-        tex2jax: {
-          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
-          processEscapes: true,
-          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-        }
-      });
-    </script>
-
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax(), i;
-        for (i=0; i < all.length; i += 1) {
-          all[i].SourceElement().parentNode.className += ' has-jax';
-        }
-      });
-    </script>
-    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
   
 
 
