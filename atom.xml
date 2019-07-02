@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://stefaniezhao.xyz/"/>
-  <updated>2019-06-21T19:30:43.709Z</updated>
+  <updated>2019-07-02T18:23:38.826Z</updated>
   <id>http://stefaniezhao.xyz/</id>
   
   <author>
@@ -15,6 +15,37 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Data structure - linked_list(2)</title>
+    <link href="http://stefaniezhao.xyz/2019/07/02/Data-structure-linked-list-2/"/>
+    <id>http://stefaniezhao.xyz/2019/07/02/Data-structure-linked-list-2/</id>
+    <published>2019-07-02T18:18:58.000Z</published>
+    <updated>2019-07-02T18:23:38.826Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="链表"><a href="#链表" class="headerlink" title="链表"></a>链表</h2><h3 id="环链表和判断"><a href="#环链表和判断" class="headerlink" title="环链表和判断"></a>环链表和判断</h3><p><a href="https://github.com/stefanieZhao77/Data-Structures-and-Algorithms/blob/master/linked_list/single_list.cpp" target="_blank" rel="noopener">Code</a></p><p><strong>代码主要实现了以下几个功能：</strong></p><ol><li>增加的环链表的构造和判断</li></ol><p><strong>主要点：</strong></p><ol><li>在原单链表基础上进行扩展，主要就是判断最后的节点的方式和最后的节点的下一个需要指向头</li></ol><hr><a id="more"></a><h3 id="双向链表"><a href="#双向链表" class="headerlink" title="双向链表"></a>双向链表</h3><p><a href="https://github.com/stefanieZhao77/Data-Structures-and-Algorithms/blob/master/linked_list/double_list.cpp" target="_blank" rel="noopener">Code</a></p><p><strong>代码主要实现了以下几个功能：</strong></p><ol><li>双向链表的插入和删除</li></ol><p><strong>主要点：</strong></p><ol><li>主要就是增加一个指向前一个节点的point</li></ol>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;链表&quot;&gt;&lt;a href=&quot;#链表&quot; class=&quot;headerlink&quot; title=&quot;链表&quot;&gt;&lt;/a&gt;链表&lt;/h2&gt;&lt;h3 id=&quot;环链表和判断&quot;&gt;&lt;a href=&quot;#环链表和判断&quot; class=&quot;headerlink&quot; title=&quot;环链表和判断&quot;&gt;&lt;/a&gt;环链表和判断&lt;/h3&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/stefanieZhao77/Data-Structures-and-Algorithms/blob/master/linked_list/single_list.cpp&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Code&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;代码主要实现了以下几个功能：&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;增加的环链表的构造和判断&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;主要点：&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;在原单链表基础上进行扩展，主要就是判断最后的节点的方式和最后的节点的下一个需要指向头&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+    
+    </summary>
+    
+      <category term="Data Structure" scheme="http://stefaniezhao.xyz/categories/Data-Structure/"/>
+    
+    
+      <category term="linked_list" scheme="http://stefaniezhao.xyz/tags/linked-list/"/>
+    
+  </entry>
   
   <entry>
     <title>Data structure - linked_list(1)</title>

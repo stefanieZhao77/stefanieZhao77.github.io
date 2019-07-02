@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Data structure - linked_list(2)]]></title>
+    <url>%2F2019%2F07%2F02%2FData-structure-linked-list-2%2F</url>
+    <content type="text"><![CDATA[链表环链表和判断Code 代码主要实现了以下几个功能： 增加的环链表的构造和判断 主要点： 在原单链表基础上进行扩展，主要就是判断最后的节点的方式和最后的节点的下一个需要指向头 双向链表Code 代码主要实现了以下几个功能： 双向链表的插入和删除 主要点： 主要就是增加一个指向前一个节点的point]]></content>
+      <categories>
+        <category>Data Structure</category>
+      </categories>
+      <tags>
+        <tag>linked_list</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Data structure - linked_list(1)]]></title>
     <url>%2F2019%2F06%2F21%2FData-structure-linked-list-1%2F</url>
     <content type="text"><![CDATA[写在开始我相信可能很多人都跟我一样，不一定是科班出身做的开发。写了多年代码，自以为前后端，数据库，运维之类的都做过一些，但是慢慢发现如果想成为一个有追求的程序员，想写出更好更完美的代码，有些基础是不得不补的。之前工作很忙，读了PhD之后觉得可以时间补充一些知识，包括数据结构和算法，程序设计和架构，软件工程等内容，希望可以持续更新下去（先立flag）。 链表单链表实现Code 代码主要实现了以下几个功能： 构造node节点 基础的增删改查和显示操作注：如有多个目标值，默认修改操作为第一个目标值 主要点： 链表是以多个node节点互相连接的，每个节点中next实际存的是下一个节点所在的内存地址，所以各个node不是连续的，不能通过连续地寻址方式进行查找 val是实际节点中的存储的值 insert方法主要是如果是第一个节点，就直接新建一个节点赋值，并将next指向空；如果不是第一个节点，则将现在的第一个节点指向新建的节点，给新建的节点赋值，并将新建的节点指向空 删除节点其实就是将上一个节点的next指向下下个节点（即跳过要删除的节点），实际上如果有自动回收机制则不必手动删除该节点，只需要更改指向就可 replace就是顺序向下查找到目标节点，并赋值 search与replace差不多，主要在查询 打印链表需要循环读取所有链表值 代码参考项目]]></content>
