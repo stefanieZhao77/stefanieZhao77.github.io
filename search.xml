@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[The design of a simple MVC system based on Node]]></title>
+    <url>%2F2019%2F09%2F11%2FThe-design-of-a-simple-MVC-system-based-on-Node%2F</url>
+    <content type="text"><![CDATA[项目代码(Code) 需求 Requirements 将所选的座位维护到数据库，前台可以根据不同房间和位置进行筛选The system stores the data of seats in database. The website can filter seats by rooms and areas. 输入用户姓名后可以提交选座信息Users can submit the information of name and seat. 该系统于每个月最后一周的周二开放The system is open at the last Tuesday every month. 图表统计Graph statistic框架和库 Framework and library 后台 Back-end koa koa-bodyparser koa-router 文件处理 Files processing mz mime 数据库 Database mysql2 sequelize 其它 Others node-uuid koa-session 模板引擎 Template engine nunjucks 静态文件 Static resources bootstrap echarts 后台 Back-end文件处理 Files processing数据库 Database其它 Others模板引擎 Template engine静态文件 Static resources具体实现 Implement数据库设计 Design of database遇见的问题 Problems后续改进 Improve proposals]]></content>
+      <categories>
+        <category>Programming</category>
+      </categories>
+      <tags>
+        <tag>MVC</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Data structure - linked_list(2)]]></title>
     <url>%2F2019%2F07%2F02%2FData-structure-linked-list-2%2F</url>
     <content type="text"><![CDATA[链表环链表和判断Code 代码主要实现了以下几个功能： 增加的环链表的构造和判断 主要点： 在原单链表基础上进行扩展，主要就是判断最后的节点的方式和最后的节点的下一个需要指向头 双向链表Code 代码主要实现了以下几个功能： 双向链表的插入和删除 主要点： 主要就是增加一个指向前一个节点的point]]></content>
