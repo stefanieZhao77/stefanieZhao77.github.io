@@ -119,18 +119,18 @@
 
 
 
-<meta name="description" content="项目代码(Code) 需求 Requirements 将所选的座位维护到数据库，前台可以根据不同房间和位置进行筛选The system stores the data of seats in database. The website can filter seats by rooms and areas. 输入用户姓名后可以提交选座信息Users can submit the informati">
+<meta name="description" content="项目代码(Code)本文是在廖雪峰的Node.js的教程改编而来，因为教程中所有的代码都是分开的，如果想了解涉及到的内容是如何融合的，可参考这个项目。 This article is from Liao, Xuefeng’s tutorial on Node.js. Because codes in that tutorial are separated, if you want to know">
 <meta name="keywords" content="MVC">
 <meta property="og:type" content="article">
 <meta property="og:title" content="The design of a simple MVC system based on Node">
 <meta property="og:url" content="http://stefaniezhao.xyz/2019/09/11/The-design-of-a-simple-MVC-system-based-on-Node/index.html">
 <meta property="og:site_name" content="Platform Nine and Three-Quarters">
-<meta property="og:description" content="项目代码(Code) 需求 Requirements 将所选的座位维护到数据库，前台可以根据不同房间和位置进行筛选The system stores the data of seats in database. The website can filter seats by rooms and areas. 输入用户姓名后可以提交选座信息Users can submit the informati">
+<meta property="og:description" content="项目代码(Code)本文是在廖雪峰的Node.js的教程改编而来，因为教程中所有的代码都是分开的，如果想了解涉及到的内容是如何融合的，可参考这个项目。 This article is from Liao, Xuefeng’s tutorial on Node.js. Because codes in that tutorial are separated, if you want to know">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-09-11T19:11:55.488Z">
+<meta property="og:updated_time" content="2019-10-16T18:05:03.153Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="The design of a simple MVC system based on Node">
-<meta name="twitter:description" content="项目代码(Code) 需求 Requirements 将所选的座位维护到数据库，前台可以根据不同房间和位置进行筛选The system stores the data of seats in database. The website can filter seats by rooms and areas. 输入用户姓名后可以提交选座信息Users can submit the informati">
+<meta name="twitter:description" content="项目代码(Code)本文是在廖雪峰的Node.js的教程改编而来，因为教程中所有的代码都是分开的，如果想了解涉及到的内容是如何融合的，可参考这个项目。 This article is from Liao, Xuefeng’s tutorial on Node.js. Because codes in that tutorial are separated, if you want to know">
 
 
 
@@ -428,7 +428,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  217
+                  813
                 </span>
               
 
@@ -444,7 +444,7 @@
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
                 <span title="Reading time">
-                  1
+                  3
                 </span>
               
             </div>
@@ -465,12 +465,15 @@
       
 
       
-        <p><a href="https://github.com/stefanieZhao77/choose_postion" target="_blank" rel="noopener">项目代码(Code)</a></p>
+        <p><a href="https://github.com/stefanieZhao77/choose_postion" target="_blank" rel="noopener">项目代码(Code)</a><br>本文是在<a href="https://www.liaoxuefeng.com/wiki/1022910821149312/1023025235359040" target="_blank" rel="noopener">廖雪峰的Node.js</a>的教程改编而来，因为教程中所有的代码都是分开的，如果想了解涉及到的内容是如何融合的，可参考这个项目。</p>
+<p>This article is from Liao, Xuefeng’s tutorial on Node.js. Because codes in that tutorial are separated, if you want to know how to assemble, please refer to this project.</p>
 <h3 id="需求-Requirements"><a href="#需求-Requirements" class="headerlink" title="需求 Requirements"></a>需求 Requirements</h3><ol>
 <li>将所选的座位维护到数据库，前台可以根据不同房间和位置进行筛选<br>The system stores the data of seats in database. The website can filter seats by rooms and areas.</li>
 <li>输入用户姓名后可以提交选座信息<br>Users can submit the information of name and seat.</li>
 <li>该系统于每个月最后一周的周二开放<br>The system is open at the last Tuesday every month.</li>
-<li>图表统计<br>Graph statistic<h3 id="框架和库-Framework-and-library"><a href="#框架和库-Framework-and-library" class="headerlink" title="框架和库 Framework and library"></a>框架和库 Framework and library</h3></li>
+<li>图表统计<br>Graph statistic</li>
+</ol>
+<h3 id="框架和库-Framework-and-library"><a href="#框架和库-Framework-and-library" class="headerlink" title="框架和库 Framework and library"></a>框架和库 Framework and library</h3><ol>
 <li><a href="#back">后台 Back-end</a><ul>
 <li>koa</li>
 <li>koa-bodyparser</li>
@@ -503,7 +506,13 @@
 </li>
 </ol>
 <a id="more"></a>
-<h4 id="后台-Back-end"><a href="#后台-Back-end" class="headerlink" title="后台 Back-end"></a><a href="#back">后台 Back-end</a></h4><h4 id="文件处理-Files-processing"><a href="#文件处理-Files-processing" class="headerlink" title="文件处理 Files processing"></a><a href="#file">文件处理 Files processing</a></h4><h4 id="数据库-Database"><a href="#数据库-Database" class="headerlink" title="数据库 Database"></a><a href="#database">数据库 Database</a></h4><h4 id="其它-Others"><a href="#其它-Others" class="headerlink" title="其它 Others"></a><a href="#other">其它 Others</a></h4><h4 id="模板引擎-Template-engine"><a href="#模板引擎-Template-engine" class="headerlink" title="模板引擎 Template engine"></a><a href="#template">模板引擎 Template engine</a></h4><h4 id="静态文件-Static-resources"><a href="#静态文件-Static-resources" class="headerlink" title="静态文件 Static resources"></a><a href="#resource">静态文件 Static resources</a></h4><h3 id="具体实现-Implement"><a href="#具体实现-Implement" class="headerlink" title="具体实现 Implement"></a>具体实现 Implement</h3><h3 id="数据库设计-Design-of-database"><a href="#数据库设计-Design-of-database" class="headerlink" title="数据库设计 Design of database"></a>数据库设计 Design of database</h3><h3 id="遇见的问题-Problems"><a href="#遇见的问题-Problems" class="headerlink" title="遇见的问题 Problems"></a>遇见的问题 Problems</h3><h3 id="后续改进-Improve-proposals"><a href="#后续改进-Improve-proposals" class="headerlink" title="后续改进 Improve proposals"></a>后续改进 Improve proposals</h3>
+<h4 id="后台-Back-end"><a href="#后台-Back-end" class="headerlink" title="后台 Back-end"></a><a href="#back">后台 Back-end</a></h4><p><a href="https://koajs.com/" target="_blank" rel="noopener">koa</a> 是一个基于Node.js的web框架。<br>koa-bodyparser 是在request传递数据的时候解析request的body的框架。<br>koa-bodyparser is the framework for parsing request bodies.<br>koa-router 是一个处理URL的中间件，目的是为了对不同的地址进行映射。<br>koa-router is a middleware that allows mappings of different URL addresses.</p>
+<h4 id="文件处理-Files-processing"><a href="#文件处理-Files-processing" class="headerlink" title="文件处理 Files processing"></a><a href="#file">文件处理 Files processing</a></h4><p>这个例子中用到文件处理的点是为了更好的工程管理，因为我们定义了很多controller 和 model，需要用文件管理工具读取文件，进行统一的对外接口和管理。<br>In the project, the reason I used the files processing libs to manage the structure. As we divided the controllers and models, we need to use the file manager tool to read the files and provide the interface.<br>如果使用打包工具，如gulp 或者 webpack，就不必使用这些。<br>If we use gulp or webpack, we don’t need to manage these files manually.</p>
+<h4 id="数据库-Database"><a href="#数据库-Database" class="headerlink" title="数据库 Database"></a><a href="#database">数据库 Database</a></h4><p><a href="https://www.npmjs.com/package/mysql2" target="_blank" rel="noopener">mysql2</a> 是一个连接node和mysql的包。<br><a href="https://www.npmjs.com/package/mysql2" target="_blank" rel="noopener">mysql2</a> is a lib for the connection to MySQL.<br><a href="https://sequelize.org/master/index.html" target="_blank" rel="noopener">sequelize</a> 是一个基于promise的ORM(Object-Relational Mapping)，即将从数据库查询的数据映射到对象上。<br><a href="https://sequelize.org/master/index.html" target="_blank" rel="noopener">sequelize</a> is a ORM(Object-Relational Mapping) which means it can map the data from the database to the objects based on promise.</p>
+<h4 id="其它-Others"><a href="#其它-Others" class="headerlink" title="其它 Others"></a><a href="#other">其它 Others</a></h4><p>node-uuid 是一个node生成uuid的库，为了统一生成每个数据库表的唯一标识id。<br>node-uuid is a lib for generating uuid which is the identity of tables.<br>koa-session 是一个可以在koa里面存储和读取session的库<br>koa-session is a lib for Node.js to read and write session in the browser.</p>
+<h4 id="模板引擎-Template-engine"><a href="#模板引擎-Template-engine" class="headerlink" title="模板引擎 Template engine"></a><a href="#template">模板引擎 Template engine</a></h4><p><a href="https://mozilla.github.io/nunjucks/" target="_blank" rel="noopener">nunjucks</a> 是一个模板引擎，在没有模板引擎之前，在我们读取了数据的数据并想呈现在界面上或者对数据进行一些逻辑处理的时候都需要使用js,而模板引擎现在就替代了这部分的工作。<br><a href="https://mozilla.github.io/nunjucks/" target="_blank" rel="noopener">nunjucks</a> is template engine. Before we had template engines, we should use Javascript to cope with data from database and add the data to the page. Now template engines can replace some work with JavaScript, like the date binding or simple logical operations.<br>nunjucks主要还是使用在node端，因为纯前端有很多非常好的MVVM框架可以进行双向的数据绑定。<br>nunjucks is used in Node.js, because there are some good MVVM frameworks can be used in frontend.</p>
+<h4 id="静态文件-Static-resources"><a href="#静态文件-Static-resources" class="headerlink" title="静态文件 Static resources"></a><a href="#resource">静态文件 Static resources</a></h4><p>Bootstrap 样式文件<br>Bootstrap style file<br>Echarts 图表<br>Echarts data visualization</p>
+
       
     </div>
     
@@ -701,7 +710,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#需求-Requirements"><span class="nav-number">1.</span> <span class="nav-text">需求 Requirements</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#框架和库-Framework-and-library"><span class="nav-number">2.</span> <span class="nav-text">框架和库 Framework and library</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#后台-Back-end"><span class="nav-number">2.1.</span> <span class="nav-text">后台 Back-end</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#文件处理-Files-processing"><span class="nav-number">2.2.</span> <span class="nav-text">文件处理 Files processing</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#数据库-Database"><span class="nav-number">2.3.</span> <span class="nav-text">数据库 Database</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#其它-Others"><span class="nav-number">2.4.</span> <span class="nav-text">其它 Others</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#模板引擎-Template-engine"><span class="nav-number">2.5.</span> <span class="nav-text">模板引擎 Template engine</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#静态文件-Static-resources"><span class="nav-number">2.6.</span> <span class="nav-text">静态文件 Static resources</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#具体实现-Implement"><span class="nav-number">3.</span> <span class="nav-text">具体实现 Implement</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据库设计-Design-of-database"><span class="nav-number">4.</span> <span class="nav-text">数据库设计 Design of database</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#遇见的问题-Problems"><span class="nav-number">5.</span> <span class="nav-text">遇见的问题 Problems</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#后续改进-Improve-proposals"><span class="nav-number">6.</span> <span class="nav-text">后续改进 Improve proposals</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#需求-Requirements"><span class="nav-number">1.</span> <span class="nav-text">需求 Requirements</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#框架和库-Framework-and-library"><span class="nav-number">2.</span> <span class="nav-text">框架和库 Framework and library</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#后台-Back-end"><span class="nav-number">2.1.</span> <span class="nav-text">后台 Back-end</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#文件处理-Files-processing"><span class="nav-number">2.2.</span> <span class="nav-text">文件处理 Files processing</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#数据库-Database"><span class="nav-number">2.3.</span> <span class="nav-text">数据库 Database</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#其它-Others"><span class="nav-number">2.4.</span> <span class="nav-text">其它 Others</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#模板引擎-Template-engine"><span class="nav-number">2.5.</span> <span class="nav-text">模板引擎 Template engine</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#静态文件-Static-resources"><span class="nav-number">2.6.</span> <span class="nav-text">静态文件 Static resources</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -735,7 +744,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">4.6k</span>
+    <span title="Site words total count">5.2k</span>
   
 </div>
 
