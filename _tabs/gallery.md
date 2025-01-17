@@ -81,7 +81,7 @@ order: 4
 <div id="lightbox" class="lightbox">
   <span id="closeLightbox" class="close">&times;</span>
   <div class="lightbox-content">
-    <img id="lightboxImage" src="" alt="">
+    <img id="lightboxImage" src="#" alt="">
   </div>
 </div>
 
