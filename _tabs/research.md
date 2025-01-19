@@ -96,26 +96,7 @@ order: 2
     margin-right: 8px;
 }
 </style>
-<script>
-function toggleProject(projectId) {
-    var details = document.getElementById(projectId);
-    var allDetails = document.getElementsByClassName('project-details');
-    
-    // Close all other project details
-    for (var i = 0; i < allDetails.length; i++) {
-        if (allDetails[i].id !== projectId && allDetails[i].style.display === "block") {
-            allDetails[i].style.display = "none";
-        }
-    }
-    
-    // Toggle the clicked project
-    if (details.style.display === "none" || details.style.display === "") {
-        details.style.display = "block";
-    } else {
-        details.style.display = "none";
-    }
-}
-</script>
+<script type="text/javascript" src="/assets/js/research.js"></script>
 
 <div class="projects-container">
     <h1>My Research Projects</h1>

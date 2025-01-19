@@ -81,8 +81,21 @@ order: 4
 <div id="lightbox" class="lightbox">
   <span id="closeLightbox" class="close">&times;</span>
   <div class="lightbox-content">
-    <img id="lightboxImage" src="#" alt="">
+    <img id="lightboxImage" src="/" alt="">
   </div>
 </div>
+
+<script>
+  const imageFolder = '{{ "/assets/img/gallery/" | relative_url }}';
+  const imageList = [
+    {% for file in site.files %}
+      {% if file.path contains '/assets/img/gallery/' %}
+        "{{ file.name }}",
+      {% endif %}
+    {% endfor %}
+  ];
+
+</script>
+
 <script src="{{ '/assets/js/gallery.js' | relative_url }}"></script>
 
