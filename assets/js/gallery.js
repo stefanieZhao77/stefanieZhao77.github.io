@@ -1,40 +1,47 @@
-document.addEventListener('DOMContentLoaded', () => {
-  const galleryContainer = document.getElementById('gallery');
-  const lightbox = document.getElementById('lightbox');
-  const lightboxImage = document.getElementById('lightboxImage');
-  const closeLightbox = document.getElementById('closeLightbox');
+const imageFolder = '/assets/img/gallery/';
+const galleryContainer = document.getElementById('gallery');
 
-  // Use the imageList passed from Jekyll
-  imageList.forEach((fileName) => {
-    const imgContainer = document.createElement('div');
-    imgContainer.classList.add('image-container');
+// Fetch the list of images from the JSON file
+fetch('/assets/data/images.json')
+  .then((response) => response.json())
+  .then((data) => {
+    const images = data.images;
 
-    const imgLink = document.createElement('a');
-    imgLink.href = imageFolder + fileName; // Link to the original image
+    // Generate the gallery
+    images.forEach((fileName) => {
+      const imgContainer = document.createElement('div');
+      imgContainer.classList.add('image-container');
 
-    const img = document.createElement('img');
-    img.src = imageFolder + fileName;
-    img.alt = fileName;
+      const imgLink = document.createElement('a');
+      imgLink.href = imageFolder + fileName; // Link to the original image
 
-    // Open image in lightbox on click
-    img.addEventListener('click', function () {
-      lightboxImage.src = imgLink.href;
-      lightbox.style.display = 'block';
+      const img = document.createElement('img');
+      img.src = imageFolder + fileName;
+      img.alt = fileName;
+
+      // Open image in lightbox on click
+      img.addEventListener('click', function () {
+        lightboxImage.src = imgLink.href;
+        lightbox.style.display = 'block';
+      });
+
+      imgContainer.appendChild(img);
+      galleryContainer.appendChild(imgContainer);
     });
-
-    imgContainer.appendChild(img);
-    galleryContainer.appendChild(imgContainer);
+  })
+  .catch((error) => {
+    console.error('Error loading images:', error);
+    galleryContainer.innerHTML = '<p>Error loading images.</p>';
   });
 
-  // Close lightbox when close button is clicked
-  closeLightbox.addEventListener('click', function () {
-    lightbox.style.display = 'none';
-  });
-
-  // Close lightbox when clicking outside of the image
-  window.onclick = function (event) {
-    if (event.target == lightbox) {
-      lightbox.style.display = 'none';
-    }
-  };
+// Close lightbox when close button is clicked
+closeLightbox.addEventListener('click', function () {
+  lightbox.style.display = 'none';
 });
+
+// Close lightbox when clicking outside of the image
+window.onclick = function (event) {
+  if (event.target == lightbox) {
+    lightbox.style.display = 'none';
+  }
+};

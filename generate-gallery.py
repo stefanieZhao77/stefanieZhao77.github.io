@@ -1,8 +1,8 @@
 import os
-import yaml
+import json
 
 gallery_folder = os.path.join('assets', 'img', 'gallery')
-output_file = os.path.join('_data', 'gallery.yml')
+output_file = os.path.join('assets', 'data', 'images.json')
 
 # Read the gallery folder
 try:
@@ -18,11 +18,11 @@ images = [
     if any(file.lower().endswith(ext) for ext in image_extensions)
 ]
 
-# Generate YAML content
-yaml_content = {'images': images}
+# Generate JSON content
+json_content = {"images": images}
 
-# Write to gallery.yml
+# Write to images.json
 with open(output_file, 'w') as f:
-    yaml.dump(yaml_content, f, default_flow_style=False)
+    json.dump(json_content, f, indent=2)  # Use json.dump for valid JSON
 
 print(f"{output_file} generated successfully!")

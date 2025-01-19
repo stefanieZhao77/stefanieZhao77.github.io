@@ -85,17 +85,5 @@ order: 4
   </div>
 </div>
 
-<script>
-  const imageFolder = '{{ "/assets/img/gallery/" | relative_url }}';
-  const imageList = [
-    {% for file in site.files %}
-      {% if file.path contains '/assets/img/gallery/' %}
-        "{{ file.name }}",
-      {% endif %}
-    {% endfor %}
-  ];
-
-</script>
-
 <script src="{{ '/assets/js/gallery.js' | relative_url }}"></script>
 
