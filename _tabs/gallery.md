@@ -1,7 +1,7 @@
 ---
 title: Gallery
 icon: fas fa-images
-order: 4
+order: 5
 ---
 
 <style>

@@ -2,8 +2,8 @@
 layout: post
 title: "Beyond the Code: The Design of the ID Anonymization Tool"
 date: 2025-02-10
-categories: [data-processing, python, anonymization, ethics, open-source]
-tags: [python, data-anonymization, data-privacy, jekyll, id-processor, open-source, ethics, design]
+categories: [Tools]
+tags: [python, data-anonymization]
 ---
 
 ## The "Why": A Need for Responsible Data Handling
