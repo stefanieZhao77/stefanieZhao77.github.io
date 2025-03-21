@@ -125,7 +125,7 @@ external_sources:
   - name: medium.com
     rss_url: https://medium.com/@stefaniezhao414/feed
   - name: substack.com
-    rss_url: https://substack.com/@stefaniezhao/feed
+    rss_url: https://stefaniezhao.substack.com/feed
 
 
 # -----------------------------------------------------------------------------
