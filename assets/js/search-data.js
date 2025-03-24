@@ -44,7 +44,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/repositories/";
           },
-        },{id: "post-beyond-the-code-the-design-of-the-id-anonymization-tool",
+        },{id: "post-no-planning-no-execution-how-to-plan-a-perfect-week",
+      
+        title: 'No planning, no execution — How to plan a perfect week <svg width="1.2rem" height="1.2rem" top=".5rem" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"><path d="M17 13.5v6H5v-12h6m3-3h6v6m0-6-9 9" class="icon_svg-stroke" stroke="#999" stroke-width="1.5" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"></path></svg>',
+      
+      description: "",
+      section: "Posts",
+      handler: () => {
+        
+          window.open("https://medium.com/@stefaniezhao414/no-planning-no-execution-how-to-plan-a-perfect-week-041e9b1698b2?source=rss-138ac7d61c06------2", "_blank");
+        
+      },
+    },{id: "post-beyond-the-code-the-design-of-the-id-anonymization-tool",
       
         title: "Beyond the Code: The Design of the ID Anonymization Tool",
       
