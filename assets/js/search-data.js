@@ -44,7 +44,29 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/repositories/";
           },
-        },{id: "post-converting-a-step-file-to-mujoco-xml-for-physics-simulation-a-practical-guide",
+        },{id: "post-legal-mock-exam-generation-by-thinking-with-llm",
+      
+        title: 'Legal Mock Exam Generation by Thinking with LLM <svg width="1.2rem" height="1.2rem" top=".5rem" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"><path d="M17 13.5v6H5v-12h6m3-3h6v6m0-6-9 9" class="icon_svg-stroke" stroke="#999" stroke-width="1.5" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"></path></svg>',
+      
+      description: "",
+      section: "Posts",
+      handler: () => {
+        
+          window.open("https://medium.com/@stefaniezhao414/legal-mock-exam-generation-by-thinking-with-llm-2360829feb9b?source=rss-138ac7d61c06------2", "_blank");
+        
+      },
+    },{id: "post-overcome-modern-distractions-with-a-smarter-productivity-tool",
+      
+        title: 'Overcome Modern Distractions with a Smarter Productivity Tool <svg width="1.2rem" height="1.2rem" top=".5rem" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"><path d="M17 13.5v6H5v-12h6m3-3h6v6m0-6-9 9" class="icon_svg-stroke" stroke="#999" stroke-width="1.5" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"></path></svg>',
+      
+      description: "",
+      section: "Posts",
+      handler: () => {
+        
+          window.open("https://medium.com/@stefaniezhao414/overcome-modern-distractions-with-a-smarter-productivity-tool-c71759de462f?source=rss-138ac7d61c06------2", "_blank");
+        
+      },
+    },{id: "post-converting-a-step-file-to-mujoco-xml-for-physics-simulation-a-practical-guide",
       
         title: 'Converting a STEP File to MuJoCo XML for Physics Simulation: A Practical Guide... <svg width="1.2rem" height="1.2rem" top=".5rem" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"><path d="M17 13.5v6H5v-12h6m3-3h6v6m0-6-9 9" class="icon_svg-stroke" stroke="#999" stroke-width="1.5" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"></path></svg>',
       
