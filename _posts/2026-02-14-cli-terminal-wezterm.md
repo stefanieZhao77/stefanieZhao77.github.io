@@ -4,6 +4,7 @@ title: "使用 CLI 编程，你需要一个更酷的 Terminal"
 date: 2026-02-14
 categories: [Blog]
 tags: [CLI, Terminal, WezTerm, AI, Workflow]
+linkedin: true
 ---
 
 > 工具的选择来是技术栈与开发流程共同决定的结果。
