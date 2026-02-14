@@ -53,6 +53,8 @@ The reasons for choosing WezTerm are simple:
 
 ---
 
+![WezTerm Configuration Screenshot](https://raw.githubusercontent.com/stefanieZhao77/stefanieZhao77.github.io/main/assets/images/wezterm-config.png)
+
 ## 03. Implementation: Defining the .wezterm.lua Configuration
 
 Setting up this terminal is straightforward: just create a `.wezterm.lua` file in the `C:\Users\<user_name>` directory to customize your desired mode (you can directly tell AI your requirements and let it write for you).
@@ -123,6 +125,8 @@ end)
 ```
 
 5. System notifications: Enable Windows notifications to alert me when my intervention is needed or when tasks are completed.
+
+![System Notification Screenshot](https://raw.githubusercontent.com/stefanieZhao77/stefanieZhao77.github.io/main/assets/images/wezterm-notification.png)
 
 ---
 
