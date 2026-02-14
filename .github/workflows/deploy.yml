@@ -139,11 +139,13 @@ jobs:
                 SLUG=$(basename "$file" .md | sed 's/^[0-9]*-[0-9]*-[0-9]*-//')
                 URL="https://stefaniezhao77.github.io/blog/${YEAR}/${SLUG}/"
                 
-                # Extract tags
-                TAGS=$(grep "^tags:" "$file" | sed 's/tags: *//; s/^\[//; s/\]$//; s/, */ /g')
+                # Extract tags and format with # prefix for LinkedIn hashtags
+                # Convert [tag1, tag2, tag3] to #tag1 #tag2 #tag3
+                TAGS=$(grep "^tags:" "$file" | sed 's/tags: *//; s/^\[//; s/\]$//; s/, */ /g' | sed 's/[^ ]* */#&/g' | sed 's/# /#/g')
                 if [ -z "$TAGS" ]; then
-                  TAGS="TechBlog Programming AI"
+                  TAGS="#TechBlog #Programming #AI"
                 fi
+                echo "Tags: $TAGS"
                 
                 # Extract article summary (first 150 chars of content after frontmatter)
                 # Skip frontmatter (between --- lines) and get first paragraph
