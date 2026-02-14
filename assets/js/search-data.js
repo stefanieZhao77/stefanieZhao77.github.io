@@ -44,7 +44,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/repositories/";
           },
-        },{id: "post-programming-with-cli-you-need-a-cooler-terminal",
+        },{id: "post-使用-cli-编程-你需要一个更酷的-terminal",
+      
+        title: "使用 CLI 编程，你需要一个更酷的 Terminal",
+      
+      description: "",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2026/cli-terminal-wezterm/";
+        
+      },
+    },{id: "post-programming-with-cli-you-need-a-cooler-terminal",
       
         title: "Programming with CLI: You Need a Cooler Terminal",
       
