@@ -4,6 +4,7 @@ title: "Programming with CLI: You Need a Cooler Terminal"
 date: 2026-02-14
 categories: [Blog]
 tags: [CLI, Terminal, WezTerm, AI, Workflow]
+linkedin: true
 ---
 
 > The choice of tools is determined by the technology stack and development workflow.
