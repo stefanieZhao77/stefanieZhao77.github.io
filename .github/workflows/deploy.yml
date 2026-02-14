@@ -102,7 +102,7 @@ jobs:
         with:
           folder: _site
 
-      # LinkedIn Sync Step
+      # LinkedIn Sync Step using Make.com
       - name: Check for LinkedIn sync 🔍
         if: github.event_name == 'push' && github.ref == 'refs/heads/main'
         id: check_linkedin
@@ -158,17 +158,17 @@ jobs:
           echo "No linkedin: true found in changed files"
           echo "should_sync=false" >> $GITHUB_OUTPUT
 
-      - name: Trigger LinkedIn Post via IFTTT 🔗
+      - name: Trigger LinkedIn Post via Make.com 🔗
         if: steps.check_linkedin.outputs.should_sync == 'true'
         env:
-          IFTTT_KEY: ${{ secrets.IFTTT_WEBHOOK_KEY }}
+          MAKE_WEBHOOK_URL: ${{ secrets.MAKE_WEBHOOK_URL }}
         run: |
-          echo "Syncing to LinkedIn..."
+          echo "Syncing to LinkedIn via Make.com..."
           echo "Title: ${{ steps.check_linkedin.outputs.post_title }}"
           echo "URL: ${{ steps.check_linkedin.outputs.post_url }}"
           echo "Tags: ${{ steps.check_linkedin.outputs.post_tags }}"
           
-          curl -X POST "https://maker.ifttt.com/trigger/new_blog_post/with/key/${IFTTT_KEY}" \
+          curl -X POST "${MAKE_WEBHOOK_URL}" \
             -H "Content-Type: application/json" \
             -d "{
               \"value1\": \"${{ steps.check_linkedin.outputs.post_title }}\",
@@ -176,4 +176,4 @@ jobs:
               \"value3\": \"${{ steps.check_linkedin.outputs.post_tags }}\"
             }"
           
-          echo "LinkedIn sync triggered successfully!"
+          echo "LinkedIn sync triggered successfully via Make.com!"
