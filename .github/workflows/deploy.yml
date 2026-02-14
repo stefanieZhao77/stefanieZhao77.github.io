@@ -102,12 +102,12 @@ jobs:
         with:
           folder: _site
 
-      # LinkedIn Sync Step using Make.com
-      - name: Check for LinkedIn sync 🔍
+      # LinkedIn Auto-Sync with Article Summary
+      - name: Check for LinkedIn Sync 🔍
         if: github.event_name == 'push' && github.ref == 'refs/heads/main'
         id: check_linkedin
         run: |
-          # 获取最近修改的 _posts 文件
+          # Get recently changed _posts files
           CHANGED_FILES=$(git diff --name-only HEAD~1 HEAD | grep "^_posts/" || true)
           
           if [ -z "$CHANGED_FILES" ]; then
@@ -120,35 +120,43 @@ jobs:
             if [ -f "$file" ]; then
               echo "Checking file: $file"
               
-              # 检查是否有 linkedin: true
+              # Check for linkedin: true in frontmatter
               if grep -qE "^linkedin:\s*true" "$file"; then
                 echo "Found linkedin: true in $file"
                 
-                # 提取标题（去掉引号）
+                # Extract title (remove quotes)
                 TITLE=$(grep "^title:" "$file" | head -1 | sed 's/title: *//; s/^["'"'"']*//; s/["'"'"']*$//')
                 echo "Title: $TITLE"
                 
-                # 提取日期
+                # Extract date
                 DATE=$(grep "^date:" "$file" | head -1 | sed 's/date: *//; s/^["'"'"']*//; s/["'"'"']*$//')
                 if [ -z "$DATE" ]; then
                   DATE=$(date +%Y-%m-%d)
                 fi
                 
-                # 构建 URL
+                # Build URL
                 YEAR=$(echo $DATE | cut -d'-' -f1)
                 SLUG=$(basename "$file" .md | sed 's/^[0-9]*-[0-9]*-[0-9]*-//')
                 URL="https://stefaniezhao77.github.io/blog/${YEAR}/${SLUG}/"
                 
-                # 提取标签
+                # Extract tags
                 TAGS=$(grep "^tags:" "$file" | sed 's/tags: *//; s/^\[//; s/\]$//; s/, */ /g')
                 if [ -z "$TAGS" ]; then
-                  TAGS="TechBlog Programming"
+                  TAGS="TechBlog Programming AI"
                 fi
+                
+                # Extract article summary (first 150 chars of content after frontmatter)
+                # Skip frontmatter (between --- lines) and get first paragraph
+                SUMMARY=$(sed '1,/---/d' "$file" | grep -v "^$" | grep -v "^#" | head -5 | tr '\n' ' ' | sed 's/  */ /g' | cut -c1-200)
+                # Clean up markdown syntax
+                SUMMARY=$(echo "$SUMMARY" | sed 's/\[//g; s/\]//g; s/([^)]*)//g; s/`//g; s/#//g')
+                echo "Summary: $SUMMARY"
                 
                 echo "should_sync=true" >> $GITHUB_OUTPUT
                 echo "post_title=$TITLE" >> $GITHUB_OUTPUT
                 echo "post_url=$URL" >> $GITHUB_OUTPUT
                 echo "post_tags=$TAGS" >> $GITHUB_OUTPUT
+                echo "post_summary=$SUMMARY" >> $GITHUB_OUTPUT
                 
                 exit 0
               fi
@@ -167,13 +175,15 @@ jobs:
           echo "Title: ${{ steps.check_linkedin.outputs.post_title }}"
           echo "URL: ${{ steps.check_linkedin.outputs.post_url }}"
           echo "Tags: ${{ steps.check_linkedin.outputs.post_tags }}"
+          echo "Summary: ${{ steps.check_linkedin.outputs.post_summary }}"
           
           curl -X POST "${MAKE_WEBHOOK_URL}" \
             -H "Content-Type: application/json" \
             -d "{
               \"value1\": \"${{ steps.check_linkedin.outputs.post_title }}\",
               \"value2\": \"${{ steps.check_linkedin.outputs.post_url }}\",
-              \"value3\": \"${{ steps.check_linkedin.outputs.post_tags }}\"
+              \"value3\": \"${{ steps.check_linkedin.outputs.post_tags }}\",
+              \"value4\": \"${{ steps.check_linkedin.outputs.post_summary }}\"
             }"
           
           echo "LinkedIn sync triggered successfully via Make.com!"
