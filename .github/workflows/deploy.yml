@@ -101,3 +101,79 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           folder: _site
+
+      # LinkedIn Sync Step
+      - name: Check for LinkedIn sync 🔍
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        id: check_linkedin
+        run: |
+          # 获取最近修改的 _posts 文件
+          CHANGED_FILES=$(git diff --name-only HEAD~1 HEAD | grep "^_posts/" || true)
+          
+          if [ -z "$CHANGED_FILES" ]; then
+            echo "No blog posts changed"
+            echo "should_sync=false" >> $GITHUB_OUTPUT
+            exit 0
+          fi
+          
+          for file in $CHANGED_FILES; do
+            if [ -f "$file" ]; then
+              echo "Checking file: $file"
+              
+              # 检查是否有 linkedin: true
+              if grep -qE "^linkedin:\s*true" "$file"; then
+                echo "Found linkedin: true in $file"
+                
+                # 提取标题（去掉引号）
+                TITLE=$(grep "^title:" "$file" | head -1 | sed 's/title: *//; s/^["'"'"']*//; s/["'"'"']*$//')
+                echo "Title: $TITLE"
+                
+                # 提取日期
+                DATE=$(grep "^date:" "$file" | head -1 | sed 's/date: *//; s/^["'"'"']*//; s/["'"'"']*$//')
+                if [ -z "$DATE" ]; then
+                  DATE=$(date +%Y-%m-%d)
+                fi
+                
+                # 构建 URL
+                YEAR=$(echo $DATE | cut -d'-' -f1)
+                SLUG=$(basename "$file" .md | sed 's/^[0-9]*-[0-9]*-[0-9]*-//')
+                URL="https://stefaniezhao77.github.io/blog/${YEAR}/${SLUG}/"
+                
+                # 提取标签
+                TAGS=$(grep "^tags:" "$file" | sed 's/tags: *//; s/^\[//; s/\]$//; s/, */ /g')
+                if [ -z "$TAGS" ]; then
+                  TAGS="TechBlog Programming"
+                fi
+                
+                echo "should_sync=true" >> $GITHUB_OUTPUT
+                echo "post_title=$TITLE" >> $GITHUB_OUTPUT
+                echo "post_url=$URL" >> $GITHUB_OUTPUT
+                echo "post_tags=$TAGS" >> $GITHUB_OUTPUT
+                
+                exit 0
+              fi
+            fi
+          done
+          
+          echo "No linkedin: true found in changed files"
+          echo "should_sync=false" >> $GITHUB_OUTPUT
+
+      - name: Trigger LinkedIn Post via IFTTT 🔗
+        if: steps.check_linkedin.outputs.should_sync == 'true'
+        env:
+          IFTTT_KEY: ${{ secrets.IFTTT_WEBHOOK_KEY }}
+        run: |
+          echo "Syncing to LinkedIn..."
+          echo "Title: ${{ steps.check_linkedin.outputs.post_title }}"
+          echo "URL: ${{ steps.check_linkedin.outputs.post_url }}"
+          echo "Tags: ${{ steps.check_linkedin.outputs.post_tags }}"
+          
+          curl -X POST "https://maker.ifttt.com/trigger/new_blog_post/with/key/${IFTTT_KEY}" \
+            -H "Content-Type: application/json" \
+            -d "{
+              \"value1\": \"${{ steps.check_linkedin.outputs.post_title }}\",
+              \"value2\": \"${{ steps.check_linkedin.outputs.post_url }}\",
+              \"value3\": \"${{ steps.check_linkedin.outputs.post_tags }}\"
+            }"
+          
+          echo "LinkedIn sync triggered successfully!"
