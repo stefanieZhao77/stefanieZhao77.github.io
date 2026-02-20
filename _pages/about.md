@@ -30,12 +30,7 @@ latest_posts:
     <h1 class="greeting">Hello, World! 👋</h1>
     <div class="intro">
       <p>
-        I'm Wanqi Zhao, a PhD candidate at TU Dresden working at the
-        intersection of software engineering and robotics. I'm passionate about
-        bringing modern technologies like ML and LLMs to traditional
-        manufacturing, making industries smarter and more efficient. I'm also a
-        full-stack software engineer with 5 years of experience in the industry
-        before I started my PhD.
+        I'm Wanqi Zhao, CEO of <strong><a href="https://www.xzxytech.top/zh" target="_blank">香知香遇科技（上海）有限责任公司 (Xiang Zhi Xiang Yu Technology)</a></strong>, where we are building an AI-powered intelligent fragrance formulation system that bridges cutting-edge AI with the centuries-old art of perfumery. I am also a PhD candidate at TU Dresden working at the intersection of software engineering and robotics, passionate about bringing modern technologies like ML and LLMs to traditional manufacturing. Before my PhD, I spent 5 years as a full-stack software engineer in the industry.
       </p>
     </div>
   </section>
@@ -44,11 +39,21 @@ latest_posts:
   <section class="research-section">
     <h2>What I'm Up To 🚀</h2>
     <p>
-      My primary research focuses on grammar-driven robotic assembly, where I'm
-      developing new ways for robots to understand and execute complex assembly
-      tasks more intelligently. Beyond this, I explore how modern technologies
-      can transform various traditional industries.
+      I am currently leading a startup venture at the intersection of AI and the fragrance industry. Alongside my entrepreneurial work, my academic research focuses on grammar-driven robotic assembly, where I'm developing new ways for robots to understand and execute complex assembly tasks more intelligently.
     </p>
+
+    <div class="startup-focus">
+      <h3>Startup: <a href="https://www.xzxytech.top/zh" target="_blank" style="color: inherit; text-decoration: none;">香知香遇科技（上海）有限责任公司 (Xiang Zhi Xiang Yu Technology)</a></h3>
+      <p>
+        As CEO, I'm leading the development of an <strong>AI intelligent
+        fragrance formulation system</strong> — a platform that leverages
+        machine learning and large language models to assist perfumers and
+        fragrance brands in creating, optimizing, and personalizing scent
+        formulas. The system combines AI-driven ingredient analysis,
+        user preference modeling, and domain expertise to bring innovation to
+        the centuries-old craft of perfumery.
+      </p>
+    </div>
 
     <div class="research-focus">
       <h3>Research Areas</h3>
@@ -145,7 +150,7 @@ latest_posts:
   <!-- Life Beyond Code Section -->
   <section class="life-section">
     <h2>Beyond Work 🌟</h2>
-    <p>When I'm not working with robots and code, you might find me:</p>
+    <p>When I'm not working with codes, you might find me:</p>
     <ul class="index">
       <li>
         Bookworm - diving into speculative and science fiction, exploring social
@@ -168,6 +173,7 @@ latest_posts:
     <p>I'm always excited to chat about:</p>
     <ul class="index">
       <li>Robotics and automation in manufacturing</li>
+      <li>AI innovations in the fragrance industry</li>
       <li>AI and LLMs applications</li>
       <li>Software engineering best practices</li>
       <li>Photography tips and tricks</li>
@@ -240,6 +246,7 @@ latest_posts:
   /* The styles will work with Chirpy's dark/light mode automatically */
   @media (prefers-color-scheme: dark) {
     .research-focus,
+    .startup-focus,
     .experience-highlights {
       background-color: var(--sidebar-bg);
       padding: 20px;
@@ -249,6 +256,7 @@ latest_posts:
 
   @media (prefers-color-scheme: light) {
     .research-focus,
+    .startup-focus,
     .experience-highlights {
       background-color: var(--sidebar-bg);
       padding: 20px;
