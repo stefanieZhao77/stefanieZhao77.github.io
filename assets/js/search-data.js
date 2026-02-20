@@ -55,6 +55,17 @@ ninja.data = [{
           window.location.href = "/blog/2026/before-ai-agent-development-streamline-your-workflow/";
         
       },
+    },{id: "post-before-diving-into-ai-agent-development-start-by-streamlining-your-workflow",
+      
+        title: "Before Diving into AI Agent Development: Start by Streamlining Your Workflow",
+      
+      description: "",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2026/before-ai-agent-development-streamline-your-workflow-en/";
+        
+      },
     },{id: "post-使用-cli-编程-你需要一个更酷的-terminal",
       
         title: "使用 CLI 编程，你需要一个更酷的 Terminal",
