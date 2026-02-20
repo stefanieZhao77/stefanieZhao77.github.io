@@ -44,7 +44,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/repositories/";
           },
-        },{id: "post-使用-cli-编程-你需要一个更酷的-terminal",
+        },{id: "post-转ai-agent开发之前-先尝试把自己的工作流程理顺",
+      
+        title: "转AI agent开发之前，先尝试把自己的工作流程理顺",
+      
+      description: "",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2026/before-ai-agent-development-streamline-your-workflow/";
+        
+      },
+    },{id: "post-使用-cli-编程-你需要一个更酷的-terminal",
       
         title: "使用 CLI 编程，你需要一个更酷的 Terminal",
       
