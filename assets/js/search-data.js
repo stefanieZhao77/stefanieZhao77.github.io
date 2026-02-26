@@ -44,7 +44,29 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/repositories/";
           },
-        },{id: "post-转ai-agent开发之前-先尝试把自己的工作流程理顺",
+        },{id: "post-ai-chat-exporter-把ai-chat对话导入obsidian",
+      
+        title: "AI Chat Exporter - 把AI chat对话导入Obsidian",
+      
+      description: "",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2026/ai-chat-exporter-obsidian/";
+        
+      },
+    },{id: "post-ai-chat-exporter-import-ai-chat-conversations-to-obsidian",
+      
+        title: "AI Chat Exporter - Import AI Chat Conversations to Obsidian",
+      
+      description: "",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2026/ai-chat-exporter-obsidian-en/";
+        
+      },
+    },{id: "post-转ai-agent开发之前-先尝试把自己的工作流程理顺",
       
         title: "转AI agent开发之前，先尝试把自己的工作流程理顺",
       
