@@ -55,6 +55,17 @@ ninja.data = [{
           window.location.href = "/blog/2026/obsidian-project-management/";
         
       },
+    },{id: "post-ai-在-c-端落地-与互联网时代相比-还缺什么条件",
+      
+        title: "AI 在 C 端落地：与互联网时代相比，还缺什么条件？",
+      
+      description: "",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2026/ai-consumer-landing/";
+        
+      },
     },{id: "post-ai-chat-exporter-把ai-chat对话导入obsidian",
       
         title: "AI Chat Exporter - 把AI chat对话导入Obsidian",
