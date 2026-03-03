@@ -44,7 +44,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/repositories/";
           },
-        },{id: "post-ai-chat-exporter-把ai-chat对话导入obsidian",
+        },{id: "post-使用-obsidian-进行开发项目管理",
+      
+        title: "使用 Obsidian 进行开发项目管理",
+      
+      description: "",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2026/obsidian-project-management/";
+        
+      },
+    },{id: "post-ai-chat-exporter-把ai-chat对话导入obsidian",
       
         title: "AI Chat Exporter - 把AI chat对话导入Obsidian",
       
