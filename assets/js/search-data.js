@@ -66,6 +66,17 @@ ninja.data = [{
           window.location.href = "/blog/2026/ai-consumer-landing/";
         
       },
+    },{id: "post-ai-in-consumer-market-what-39-s-missing-compared-to-the-internet-era",
+      
+        title: "AI in Consumer Market: What&#39;s Missing Compared to the Internet Era?",
+      
+      description: "",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2026/ai-consumer-landing-en/";
+        
+      },
     },{id: "post-ai-chat-exporter-把ai-chat对话导入obsidian",
       
         title: "AI Chat Exporter - 把AI chat对话导入Obsidian",
