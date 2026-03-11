@@ -31,7 +31,7 @@ Other review content is automatically triggered when generating notes. For examp
 
 ### Daily Report Template Settings
 
-My daily report is mainly divided into three parts: Todo, Memo, and Trackers for recording some habits, plus a task list built with dataview. I write a bunch of fragmented diary content under Memo every day. Then under AI review, I created two buttons (requires CustomJS plugin), one to review today and one to review yesterday (because sometimes I read books or work out at night and haven't filled in tracker information, so I might review the next day—this is entirely personal habit). The daily report format is shown below:
+My daily report is mainly divided into three parts: Todo, Memo, and Trackers for recording some habits, plus a task list built with dataview. I write a bunch of fragmented diary content under Memo every day. Then under AI review, I created two buttons, one to review today and one to review yesterday (because sometimes I read books or work out at night and haven't filled in tracker information, so I might review the next day—this is entirely personal habit). The daily report format is shown below:
 
 ![Daily Report Interface](https://i.imgur.com/H4Ga8cW.png)
 
