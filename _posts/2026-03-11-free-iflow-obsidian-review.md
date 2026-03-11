@@ -32,7 +32,7 @@ tags: [iFlow, Obsidian, AI, 生产力, 日记, 复盘]
 
 我的日报里面主要分为三个部分，一个是Todo， 一个是Memo，还有就是一个Trackers用来记录我一些习惯，以及我用dataview构建的代办task的列表。我每天会把一堆碎碎念的日记内容写到Memo下面。然后在AI review下面用创建了两个按钮，一个是复盘今天，一个是复盘昨天（因为有时候晚上看书或者健身了，就没回填tracker的信息，所以可能会在第二天复盘，这个就完全是个人习惯了），日报的格式如下图所示：
 
-![日报界面](https://i.imgur.com/H4Ga8cW.png)
+![日报界面](https://i.imgur.com/RqM6P6z.png)
 
 这两个按钮的调用方式是使用本地的js文件打开powershell的窗口运行iflow以及对应的prompt。这个按钮以及运行脚本可以让AI帮忙写一下，也可以改成自己喜欢的方式。
 
