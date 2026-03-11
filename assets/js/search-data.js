@@ -44,7 +44,29 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/repositories/";
           },
-        },{id: "post-使用-obsidian-进行开发项目管理",
+        },{id: "post-免费-用iflow结合obsidian记录和复盘",
+      
+        title: "免费！用iFlow结合Obsidian记录和复盘",
+      
+      description: "",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2026/free-iflow-obsidian-review/";
+        
+      },
+    },{id: "post-free-using-iflow-with-obsidian-for-recording-and-reviewing",
+      
+        title: "Free! Using iFlow with Obsidian for Recording and Reviewing",
+      
+      description: "",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2026/free-iflow-obsidian-review-en/";
+        
+      },
+    },{id: "post-使用-obsidian-进行开发项目管理",
       
         title: "使用 Obsidian 进行开发项目管理",
       
