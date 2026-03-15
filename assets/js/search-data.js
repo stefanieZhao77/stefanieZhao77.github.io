@@ -55,17 +55,6 @@ ninja.data = [{
           window.location.href = "/blog/2026/agent-native-software-design/";
         
       },
-    },{id: "post-how-should-agent-native-software-be-designed",
-      
-        title: "How Should Agent-Native Software Be Designed?",
-      
-      description: "",
-      section: "Posts",
-      handler: () => {
-        
-          window.location.href = "/blog/2026/agent-native-software-design-en/";
-        
-      },
     },{id: "post-免费-用iflow结合obsidian记录和复盘",
       
         title: "免费！用iFlow结合Obsidian记录和复盘",
