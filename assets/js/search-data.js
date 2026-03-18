@@ -63,6 +63,17 @@ ninja.data = [{
       section: "Posts",
       handler: () => {
         
+          window.location.href = "/blog/2026/ai-geo-en/";
+        
+      },
+    },{id: "post-当-ai-成为入口-geo与控制权",
+      
+        title: "当 AI 成为入口：GEO与控制权",
+      
+      description: "",
+      section: "Posts",
+      handler: () => {
+        
           window.location.href = "/blog/2026/agent-native-software-design/";
         
       },
