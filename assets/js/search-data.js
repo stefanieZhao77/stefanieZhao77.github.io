@@ -44,7 +44,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/repositories/";
           },
-        },{id: "post-当-ai-成为入口-geo与控制权",
+        },{id: "post-when-ai-becomes-the-entry-point-geo-and-control",
+      
+        title: "When AI Becomes the Entry Point: GEO and Control",
+      
+      description: "",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2026/ai-geo-control-en/";
+        
+      },
+    },{id: "post-当-ai-成为入口-geo与控制权",
       
         title: "当 AI 成为入口：GEO与控制权",
       
