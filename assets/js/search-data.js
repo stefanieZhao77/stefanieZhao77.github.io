@@ -55,6 +55,17 @@ ninja.data = [{
           window.location.href = "/blog/2026/agent-native-software-design/";
         
       },
+    },{id: "post-当-ai-成为入口-geo与控制权",
+      
+        title: "当 AI 成为入口：GEO与控制权",
+      
+      description: "",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2026/agent-native-software-design-en/";
+        
+      },
     },{id: "post-真正面向agent的软件应该怎么设计",
       
         title: "真正面向Agent的软件应该怎么设计？",
