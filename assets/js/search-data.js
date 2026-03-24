@@ -44,7 +44,29 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/repositories/";
           },
-        },{id: "post-when-ai-becomes-the-entry-point-geo-and-control",
+        },{id: "post-我是如何用-git-worktree-skill-实现多任务并行开发的",
+      
+        title: "我是如何用 Git Worktree + Skill 实现多任务并行开发的",
+      
+      description: "",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2026/%E6%88%91%E6%98%AF%E5%A6%82%E4%BD%95%E7%94%A8-git-worktree-skill-%E5%AE%9E%E7%8E%B0%E5%A4%9A%E4%BB%BB%E5%8A%A1%E5%B9%B6%E8%A1%8C%E5%BC%80%E5%8F%91%E7%9A%84/";
+        
+      },
+    },{id: "post-我是如何用-git-worktree-skill-实现多任务并行开发的",
+      
+        title: "我是如何用 Git Worktree + Skill 实现多任务并行开发的",
+      
+      description: "",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2026/%E6%88%91%E6%98%AF%E5%A6%82%E4%BD%95%E7%94%A8-git-worktree-skill-%E5%AE%9E%E7%8E%B0%E5%A4%9A%E4%BB%BB%E5%8A%A1%E5%B9%B6%E8%A1%8C%E5%BC%80%E5%8F%91%E7%9A%84-en/";
+        
+      },
+    },{id: "post-when-ai-becomes-the-entry-point-geo-and-control",
       
         title: "When AI Becomes the Entry Point: GEO and Control",
       
