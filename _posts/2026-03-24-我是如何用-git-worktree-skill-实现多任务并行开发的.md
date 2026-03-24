@@ -6,7 +6,7 @@ categories: [Blog]
 tags: [Agent, AI, 软件设计, 产品设计]
 ---
 
-![[Pasted image 20260323085330.png]]
+![工作流程图](https://raw.githubusercontent.com/stefanieZhao77/stefanieZhao77.github.io/main/assets/images/obsidian-project-management-2026-03-03.png)
 
 在之前的文章中，我介绍了我是如何在 Obsidian 中管理 release、feature 和 bug，把开发任务结构化。当任务被组织好之后，另一个更重要的事情是这些任务如何被并行高效执行。如果仍然沿用传统的开发方式，即一个分支对应一个功能、线性推进，那么即使有 AI 的帮助，本质上仍然是单线程开发。一旦任务变多，人需要不断在不同上下文之间切换，效率反而会下降。
 所以我现在把release 作为更高一层的执行单位，并引入多个 worktree 并行开发的方式。
