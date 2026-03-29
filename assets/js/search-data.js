@@ -44,7 +44,29 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/repositories/";
           },
-        },{id: "post-我是如何用-git-worktree-skill-实现多任务并行开发的",
+        },{id: "post-创造力不是人类的护城河",
+      
+        title: "创造力不是人类的护城河",
+      
+      description: "",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2026/creativity-is-not-humanitys-moat/";
+        
+      },
+    },{id: "post-creativity-is-not-humanity-39-s-moat",
+      
+        title: "Creativity Is Not Humanity&#39;s Moat",
+      
+      description: "",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2026/creativity-is-not-humanitys-moat-en/";
+        
+      },
+    },{id: "post-我是如何用-git-worktree-skill-实现多任务并行开发的",
       
         title: "我是如何用 Git Worktree + Skill 实现多任务并行开发的",
       
