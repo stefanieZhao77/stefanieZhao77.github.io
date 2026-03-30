@@ -55,17 +55,6 @@ ninja.data = [{
           window.location.href = "/blog/2026/creativity-is-not-humanitys-moat/";
         
       },
-    },{id: "post-creativity-is-not-humanity-39-s-moat-test",
-      
-        title: "Creativity Is Not Humanity&#39;s Moat - Test",
-      
-      description: "",
-      section: "Posts",
-      handler: () => {
-        
-          window.location.href = "/blog/2026/creativity-is-not-humanitys-moat-v2/";
-        
-      },
     },{id: "post-creativity-is-not-humanity-39-s-moat",
       
         title: "Creativity Is Not Humanity&#39;s Moat",
