@@ -181,19 +181,27 @@ jobs:
         env:
           MAKE_WEBHOOK_URL: ${{ secrets.MAKE_WEBHOOK_URL }}
         run: |
-          echo "Syncing to LinkedIn via Make.com..."
+          echo "=== LinkedIn Sync Debug Info ==="
           echo "Title: ${{ steps.check_linkedin.outputs.post_title }}"
           echo "URL: ${{ steps.check_linkedin.outputs.post_url }}"
           echo "Tags: ${{ steps.check_linkedin.outputs.post_tags }}"
           echo "Summary: ${{ steps.check_linkedin.outputs.post_summary }}"
+          echo "Webhook URL configured: [REDACTED]"
           
-          curl -X POST "${MAKE_WEBHOOK_URL}" \
+          if [ -z "$MAKE_WEBHOOK_URL" ]; then
+            echo "ERROR: MAKE_WEBHOOK_URL is not set in repository secrets!"
+            exit 1
+          fi
+          
+          echo "Sending request to Make.com..."
+          RESPONSE=$(curl -s -w "\nHTTP_CODE:%{http_code}" -X POST "${MAKE_WEBHOOK_URL}" \
             -H "Content-Type: application/json" \
             -d "{
               \"value1\": \"${{ steps.check_linkedin.outputs.post_title }}\",
               \"value2\": \"${{ steps.check_linkedin.outputs.post_url }}\",
               \"value3\": \"${{ steps.check_linkedin.outputs.post_tags }}\",
               \"value4\": \"${{ steps.check_linkedin.outputs.post_summary }}\"
-            }"
+            }")
           
-          echo "LinkedIn sync triggered successfully via Make.com!"
+          echo "Response: $RESPONSE"
+          echo "=== End LinkedIn Sync ==="
