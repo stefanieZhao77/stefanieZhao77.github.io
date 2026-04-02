@@ -55,6 +55,17 @@ ninja.data = [{
           window.location.href = "/blog/2026/parallel-multi-task-development-git-worktree-skills-en/";
         
       },
+    },{id: "post-managing-development-projects-with-obsidian",
+      
+        title: "Managing Development Projects with Obsidian",
+      
+      description: "",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2026/managing-development-projects-with-obsidian-en/";
+        
+      },
     },{id: "post-创造力不是人类的护城河",
       
         title: "创造力不是人类的护城河",
