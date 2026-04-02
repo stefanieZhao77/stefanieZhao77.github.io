@@ -44,7 +44,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/repositories/";
           },
-        },{id: "post-创造力不是人类的护城河",
+        },{id: "post-managing-development-projects-with-obsidian",
+      
+        title: "Managing Development Projects with Obsidian",
+      
+      description: "",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2026/managing-development-projects-with-obsidian-en/";
+        
+      },
+    },{id: "post-创造力不是人类的护城河",
       
         title: "创造力不是人类的护城河",
       
