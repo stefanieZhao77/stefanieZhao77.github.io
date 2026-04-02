@@ -44,7 +44,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/repositories/";
           },
-        },{id: "post-创造力不是人类的护城河",
+        },{id: "post-how-i-achieved-parallel-multi-task-development-with-git-worktree-skills",
+      
+        title: "How I Achieved Parallel Multi-Task Development with Git Worktree + Skills",
+      
+      description: "",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2026/parallel-multi-task-development-git-worktree-skills-en/";
+        
+      },
+    },{id: "post-创造力不是人类的护城河",
       
         title: "创造力不是人类的护城河",
       
