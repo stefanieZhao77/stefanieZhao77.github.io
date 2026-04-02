@@ -107,101 +107,85 @@ jobs:
           folder: _site
 
       # LinkedIn Auto-Sync with Article Summary
-      - name: Check for LinkedIn Sync 🔍
+      - name: Sync LinkedIn Posts 🔗
         if: github.event_name == 'push' && github.ref == 'refs/heads/main'
         continue-on-error: true
-        id: check_linkedin
+        env:
+          MAKE_WEBHOOK_URL: ${{ secrets.MAKE_WEBHOOK_URL }}
         run: |
+          if [ -z "$MAKE_WEBHOOK_URL" ]; then
+            echo "ERROR: MAKE_WEBHOOK_URL is not set in repository secrets!"
+            exit 1
+          fi
+
           # Get recently changed _posts files
           echo "Checking for changed files..."
           CHANGED_FILES=$(git diff --name-only HEAD~1 HEAD | grep "^_posts/" || true)
           echo "Changed files: $CHANGED_FILES"
-          
+
           if [ -z "$CHANGED_FILES" ]; then
             echo "No blog posts changed"
-            echo "should_sync=false" >> $GITHUB_OUTPUT
             exit 0
           fi
-          
+
+          SYNC_COUNT=0
           for file in $CHANGED_FILES; do
             if [ -f "$file" ]; then
               echo "Checking file: $file"
-              
+
               # Check for linkedin: true in frontmatter
               if grep -qE "^linkedin:\s*true" "$file"; then
                 echo "Found linkedin: true in $file"
-                
+
                 # Extract title (remove quotes)
                 TITLE=$(grep "^title:" "$file" | head -1 | sed 's/title: *//; s/^["'"'"']*//; s/["'"'"']*$//')
                 echo "Title: $TITLE"
-                
+
                 # Extract date
                 DATE=$(grep "^date:" "$file" | head -1 | sed 's/date: *//; s/^["'"'"']*//; s/["'"'"']*$//')
                 if [ -z "$DATE" ]; then
                   DATE=$(date +%Y-%m-%d)
                 fi
-                
+
                 # Build URL
                 YEAR=$(echo $DATE | cut -d'-' -f1)
                 SLUG=$(basename "$file" .md | sed 's/^[0-9]*-[0-9]*-[0-9]*-//')
                 URL="https://stefaniezhao77.github.io/blog/${YEAR}/${SLUG}/"
-                
+
                 # Extract tags and format with # prefix for LinkedIn hashtags
-                # Convert [tag1, tag2, tag3] to #tag1 #tag2 #tag3
-                TAGS=$(grep "^tags:" "$file" | sed 's/tags: *//; s/^\[//; s/\]$//; s/, */ /g' | sed 's/[^ ]* */#&/g' | sed 's/# /#/g')
+                TAGS=$(grep "^tags:" "$file" | sed 's/tags: *//; s/^\[//; s/\]$//; s/, */ /g; s/'"'"'//g' | sed 's/[^ ]* */#&/g' | sed 's/# /#/g')
                 if [ -z "$TAGS" ]; then
                   TAGS="#TechBlog #Programming #AI"
                 fi
                 echo "Tags: $TAGS"
-                
-                # Extract article summary (first 150 chars of content after frontmatter)
-                # Skip frontmatter (between --- lines) and get first paragraph
-                SUMMARY=$(sed '1,/---/d' "$file" | grep -v "^$" | grep -v "^#" | head -5 | tr '\n' ' ' | sed 's/  */ /g' | cut -c1-200)
+
+                # Extract article summary: skip entire frontmatter (between --- markers),
+                # then skip blockquotes (>), images (![), and empty lines, get first meaningful paragraph
+                SUMMARY=$(awk '/^---$/{n++; next} n>=2{print}' "$file" | grep -v "^$" | grep -v "^>" | grep -v "^!\[" | grep -v "^#" | head -5 | tr '\n' ' ' | sed 's/  */ /g' | cut -c1-200)
                 # Clean up markdown syntax
-                SUMMARY=$(echo "$SUMMARY" | sed 's/\[//g; s/\]//g; s/([^)]*)//g; s/`//g; s/#//g')
+                SUMMARY=$(echo "$SUMMARY" | sed 's/\[//g; s/\]//g; s/([^)]*)//g; s/`//g; s/\*//g')
                 echo "Summary: $SUMMARY"
-                
-                echo "should_sync=true" >> $GITHUB_OUTPUT
-                echo "post_title=$TITLE" >> $GITHUB_OUTPUT
-                echo "post_url=$URL" >> $GITHUB_OUTPUT
-                echo "post_tags=$TAGS" >> $GITHUB_OUTPUT
-                echo "post_summary=$SUMMARY" >> $GITHUB_OUTPUT
-                
-                exit 0
+
+                if [ -z "$SUMMARY" ]; then
+                  echo "WARNING: Could not extract summary from $file, using title as fallback"
+                  SUMMARY="$TITLE - A new blog post about technology and development."
+                fi
+
+                echo "Sending LinkedIn sync for: $TITLE"
+                RESPONSE=$(curl -s -w "\nHTTP_CODE:%{http_code}" -X POST "${MAKE_WEBHOOK_URL}" \
+                  -H "Content-Type: application/json" \
+                  -d "{
+                    \"value1\": \"${TITLE}\",
+                    \"value2\": \"${URL}\",
+                    \"value3\": \"${TAGS}\",
+                    \"value4\": \"${SUMMARY}\"
+                  }")
+
+                echo "Response: $RESPONSE"
+                SYNC_COUNT=$((SYNC_COUNT + 1))
+                echo "---"
               fi
             fi
           done
-          
-          echo "No linkedin: true found in changed files"
-          echo "should_sync=false" >> $GITHUB_OUTPUT
 
-      - name: Trigger LinkedIn Post via Make.com 🔗
-        if: steps.check_linkedin.outputs.should_sync == 'true'
-        continue-on-error: true
-        env:
-          MAKE_WEBHOOK_URL: ${{ secrets.MAKE_WEBHOOK_URL }}
-        run: |
-          echo "=== LinkedIn Sync Debug Info ==="
-          echo "Title: ${{ steps.check_linkedin.outputs.post_title }}"
-          echo "URL: ${{ steps.check_linkedin.outputs.post_url }}"
-          echo "Tags: ${{ steps.check_linkedin.outputs.post_tags }}"
-          echo "Summary: ${{ steps.check_linkedin.outputs.post_summary }}"
-          echo "Webhook URL configured: [REDACTED]"
-          
-          if [ -z "$MAKE_WEBHOOK_URL" ]; then
-            echo "ERROR: MAKE_WEBHOOK_URL is not set in repository secrets!"
-            exit 1
-          fi
-          
-          echo "Sending request to Make.com..."
-          RESPONSE=$(curl -s -w "\nHTTP_CODE:%{http_code}" -X POST "${MAKE_WEBHOOK_URL}" \
-            -H "Content-Type: application/json" \
-            -d "{
-              \"value1\": \"${{ steps.check_linkedin.outputs.post_title }}\",
-              \"value2\": \"${{ steps.check_linkedin.outputs.post_url }}\",
-              \"value3\": \"${{ steps.check_linkedin.outputs.post_tags }}\",
-              \"value4\": \"${{ steps.check_linkedin.outputs.post_summary }}\"
-            }")
-          
-          echo "Response: $RESPONSE"
-          echo "=== End LinkedIn Sync ==="
+          echo "LinkedIn sync completed. Total posts synced: $SYNC_COUNT"
