@@ -66,6 +66,28 @@ ninja.data = [{
           window.location.href = "/blog/2026/managing-development-projects-with-obsidian-en/";
         
       },
+    },{id: "post-harness-当-ai-agent-进入工程体系之后",
+      
+        title: "Harness：当 AI Agent 进入工程体系之后",
+      
+      description: "",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2026/harness-ai-agent-engineering/";
+        
+      },
+    },{id: "post-harness-when-ai-agents-enter-the-engineering-system",
+      
+        title: "Harness: When AI Agents Enter the Engineering System",
+      
+      description: "",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2026/harness-ai-agent-engineering-en/";
+        
+      },
     },{id: "post-创造力不是人类的护城河",
       
         title: "创造力不是人类的护城河",
