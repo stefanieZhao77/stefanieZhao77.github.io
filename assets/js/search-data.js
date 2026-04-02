@@ -44,7 +44,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/repositories/";
           },
-        },{id: "post-managing-development-projects-with-obsidian",
+        },{id: "post-how-i-achieved-parallel-multi-task-development-with-git-worktree-skills",
+      
+        title: "How I Achieved Parallel Multi-Task Development with Git Worktree + Skills",
+      
+      description: "",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2026/parallel-multi-task-development-git-worktree-skills-en/";
+        
+      },
+    },{id: "post-managing-development-projects-with-obsidian",
       
         title: "Managing Development Projects with Obsidian",
       
