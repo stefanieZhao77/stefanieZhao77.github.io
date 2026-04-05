@@ -44,7 +44,29 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/repositories/";
           },
-        },{id: "post-how-i-achieved-parallel-multi-task-development-with-git-worktree-skills",
+        },{id: "post-ai-时代-如何保护你的大脑",
+      
+        title: "AI 时代，如何保护你的大脑",
+      
+      description: "",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2026/protecting-your-brain-ai-era/";
+        
+      },
+    },{id: "post-protecting-your-brain-in-the-ai-era",
+      
+        title: "Protecting Your Brain in the AI Era",
+      
+      description: "",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2026/protecting-your-brain-ai-era-en/";
+        
+      },
+    },{id: "post-how-i-achieved-parallel-multi-task-development-with-git-worktree-skills",
       
         title: "How I Achieved Parallel Multi-Task Development with Git Worktree + Skills",
       
