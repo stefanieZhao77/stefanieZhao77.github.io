@@ -44,7 +44,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/repositories/";
           },
-        },{id: "post-ai-时代-如何保护你的大脑",
+        },{id: "post-从-openclaw-的接入方式-看通信模型的选择逻辑",
+      
+        title: "从 OpenClaw 的接入方式，看通信模型的选择逻辑",
+      
+      description: "",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2026/openclaw-communication-models/";
+        
+      },
+    },{id: "post-ai-时代-如何保护你的大脑",
       
         title: "AI 时代，如何保护你的大脑",
       
