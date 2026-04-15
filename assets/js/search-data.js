@@ -55,17 +55,6 @@ ninja.data = [{
           window.location.href = "/blog/2026/openclaw-communication-models/";
         
       },
-    },{id: "post-understanding-communication-model-choices-through-openclaw-39-s-integration-approaches",
-      
-        title: "Understanding Communication Model Choices Through OpenClaw&#39;s Integration Approaches",
-      
-      description: "",
-      section: "Posts",
-      handler: () => {
-        
-          window.location.href = "/blog/2026/openclaw-communication-models-en/";
-        
-      },
     },{id: "post-ai-时代-如何保护你的大脑",
       
         title: "AI 时代，如何保护你的大脑",
