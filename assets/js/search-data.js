@@ -44,7 +44,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/repositories/";
           },
-        },{id: "post-从-openclaw-的接入方式-看通信模型的选择逻辑",
+        },{id: "post-从notebook-navigator-聊聊ai时代设计的重要性",
+      
+        title: "从Notebook Navigator 聊聊AI时代设计的重要性",
+      
+      description: "",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2026/notebook-navigator-ai/";
+        
+      },
+    },{id: "post-从-openclaw-的接入方式-看通信模型的选择逻辑",
       
         title: "从 OpenClaw 的接入方式，看通信模型的选择逻辑",
       
