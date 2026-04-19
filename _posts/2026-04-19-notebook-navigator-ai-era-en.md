@@ -7,43 +7,66 @@ tags: [Agent, AI, Tool Design, Product Design, Obsidian]
 linkedin: true
 ---
 
+Some say the people now tinkering with AI were once tinkering with note-taking apps. Thinking about it, that describes me perfectly.
 
-有人说，现在折腾 AI 的这批人，之前就是折腾笔记的。想了想，好像说的就是我。
-现在已经是 Obsidian 的重度用户了。我最喜欢它的地方，一是极其丰富的插件生态，二是可以直接用 JS 嵌入到笔记中，把笔记变成一个可编程系统。对程序员来说，这种自由度非常友好。
-去年有一个插件突然变得很火：Notebook Navigator。用了之后，我把之前的一堆插件都卸掉了——包括管理类的、布局类的，甚至 calendar 和 homepage 这种我原本一直在用的东西。
-这件事让我产生了一个更强烈的感受：AI 放大的，其实不是效率本身，而是“工具之间的收敛能力”。
-在 AI 加速开发的时代，那些原本分散的小问题，可以被快速识别、融合、打磨，最后变成一套更顺滑、更完整、几乎没有边界的工具体验。
-这篇文章不是说明书，而是想聊一件更底层的事情：当开发门槛被 AI 大幅降低之后，工具设计真正应该关注什么。
-## Notebook Navigator：一场「痛点融合」实验
+I'm now a heavy Obsidian user. What I love most about it is first, the extremely rich plugin ecosystem, and second, the ability to embed JavaScript directly into notes, turning them into a programmable system. This kind of freedom is incredibly appealing to programmers.
 
-### 它到底解决了什么
+Last year, a plugin suddenly became very popular: Notebook Navigator. After using it, I uninstalled all my previous plugins—including management ones, layout ones, even calendar and homepage, which I had been using all along.
 
-Notebook Navigator 表面上是在做一件很简单的事情——替换 Obsidian 默认的文件浏览器。它提供了一个双栏结构，左侧是导航树，右侧是文件列表和预览，同时支持标签、文件夹、搜索等多种筛选方式，并且几乎所有操作都可以通过键盘完成 。
-这些能力本身并不新，甚至可以说在不同插件中都见过。它真正特别的地方，不在于做了什么新的功能，而在于它改变了一件更根本的事情：它把 Obsidian 原本割裂的几种信息组织方式，收敛到了同一个交互入口里。
+This gave me an even stronger realization: what AI amplifies isn't efficiency itself, but the "convergence ability" between tools.
 
-在 Obsidian 里，你可以用文件夹，也可以用标签，也可以依赖搜索或者双链。这些方式并不是统一的，它们是并列存在的。你必须在某种程度上做出选择，甚至要在不同的面板之间来回切换。Notebook Navigator 做的事情，是让这种选择消失。
+In the era of AI-accelerated development, those scattered small problems can be quickly identified, merged, polished, and ultimately turned into a smoother, more complete tool experience with almost no boundaries.
 
-同一篇笔记，可以同时存在于文件夹结构里，也存在于标签体系里，而你不再需要切换不同的视图去理解它。这种体验本质上更接近一个多维索引的数据库，而不是传统意义上的文件系统
+This article isn't a manual. It's about something more fundamental: when development barriers are dramatically lowered by AI, what should tool design really focus on?
 
-它替代了我很多原有的插件，譬如calendar，homepage等。还有就是我个人真的很喜欢骚气的Rainbow配色文件夹，以及方便地更改文件夹的icon（对，我是文件夹管理党）。
+## Notebook Navigator: A "Pain Point Convergence" Experiment
+
+### What Does It Actually Solve?
+
+Notebook Navigator does something seemingly simple—it replaces Obsidian's default file browser. It provides a two-column structure: a navigation tree on the left, file list and preview on the right, while supporting various filtering methods like tags, folders, and search, with almost all operations doable via keyboard.
+
+These capabilities themselves aren't particularly new—you could find them across different plugins. What makes Notebook Navigator truly special isn't adding new features, but changing something more fundamental: it converges Obsidian's originally fragmented information organization methods into a single interaction entry.
+
+In Obsidian, you can use folders, or tags, or rely on search or bi-directional links. These methods aren't unified—they exist in parallel. You have to make choices to some extent, even switching between different panels. What Notebook Navigator does is make that choice disappear.
+
+The same note can exist in both folder structure and tag system simultaneously, without needing to switch views to understand it. This experience is essentially closer to a multi-dimensional indexed database than a traditional file system.
+
+It replaced many of my existing plugins, like calendar and homepage. Also, I really love the flashy Rainbow-colored folders, and the ability to easily change folder icons. (Yes, I'm a folder organization enthusiast.)
+
 ![Notebook Navigator Rainbow](https://raw.githubusercontent.com/stefanieZhao77/stefanieZhao77.github.io/main/assets/images/notebook-navigator-rainbow.png)
 
-### 自定义空间：让工具长成你手的形状
+### Customizable Space: Making Tools Fit Your Hand
 
-Notebook Navigator 还有一个让我印象很深的点，是它的可塑性。
-它几乎允许你调整所有关键的展示和交互方式。你可以改变预览的密度，可以调整结构的展开方式，可以定义筛选规则，也可以重写自己的快捷键逻辑。甚至可以为不同的场景建立完全不同的一套视图。
-这背后其实是一种很清晰的设计判断：工具不应该定义用户的使用方式，而应该允许用户定义工具的形状。
-好的工具，不应该像一双标准码的鞋，而应该像一块可以反复塑形的陶泥。
+What impressed me most about Notebook Navigator is its plasticity.
 
-## AI 时代，工具设计该关注什么
+It allows you to adjust almost every key display and interaction method. You can change preview density, adjust how structure expands, define filtering rules, or rewrite your own shortcut logic. You can even create completely different view sets for different scenarios.
 
-Notebook Navigator 之所以让我印象深刻，并不是因为它本身，而是因为它代表了一种趋势：过去那些看起来只是“小问题”的东西，比如多点一下、多切一个面板、多记一套快捷键，其实一直存在。只是因为开发成本高，它们不值得被解决。
+Behind this is a clear design philosophy: tools shouldn't define how users use them; they should allow users to define the tool's shape.
 
-但现在情况变了。当开发成本被 AI 压低之后，这些问题不再被忽略。它们开始被不断组合、融合，最终形成一种新的体验形态。这时候竞争的核心，也发生了变化。
-写一个功能已经不难，做一个插件也不难。真正难的，是你如何把这些功能组织在一起，以及用户在使用它们的时候，是否感觉不到边界。
+Good tools shouldn't be like standard-sized shoes, but like moldable clay that can be reshaped repeatedly.
 
-如果再往下看一层，其实用户的需求一直没有变。大家想要的，无非是更快找到内容，更顺畅完成操作，更自然地组织信息。真正发生变化的，是用户的容忍度。
-以前，只要功能存在，就可以接受一些不顺手的设计。但现在，如果一个工具让人频繁切换、频繁思考，用户很快就会离开，甚至自己做一个替代方案。
-AI 的存在，让“将就”这件事变得越来越不可接受。
+## What Tool Design Should Focus on in the AI Era
 
-未来，工具之间的差异在缩小，而每个人的使用方式在放大。
+What makes Notebook Navigator so impressive isn't the plugin itself, but the trend it represents: those things that seemed like just "small problems" before—clicking one extra time, switching one extra panel, remembering one extra shortcut—they always existed. It was just that development costs were too high to justify solving them.
+
+But things have changed. When development costs are compressed by AI, these problems are no longer ignored. They start being constantly combined and merged, ultimately forming a new experience paradigm. The core of competition has also shifted.
+
+Writing a feature isn't hard anymore. Making a plugin isn't hard either. What's truly difficult is how you organize these features together, and whether users feel any boundaries when using them.
+
+Looking one layer deeper, user needs haven't actually changed. What people want is finding content faster, completing operations more smoothly, organizing information more naturally. What's really changed is user tolerance.
+
+Before, as long as a feature existed, some clunky design was acceptable. But now, if a tool makes people switch contexts frequently or think hard, they'll leave quickly—or even build their own alternative.
+
+AI is making "settling" increasingly unacceptable.
+
+In the future, the differences between tools are shrinking, while each person's way of using them is expanding.
+
+---
+
+**Author: Xiaozhao**
+
+PhD in Software Engineering · 13 years Full-Stack Development
+
+Focus on AI workflows, software system design, and agent collaboration.
+
+Building a professional AI perfumer startup while continuously documenting technical practices and thoughts.
