@@ -55,6 +55,17 @@ ninja.data = [{
           window.location.href = "/blog/2026/notebook-navigator-ai/";
         
       },
+    },{id: "post-beyond-notebook-navigator-why-tool-design-matters-more-than-ever-in-the-ai-era",
+      
+        title: "Beyond Notebook Navigator: Why Tool Design Matters More Than Ever in the AI...",
+      
+      description: "",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2026/notebook-navigator-ai-era-en/";
+        
+      },
     },{id: "post-从-openclaw-的接入方式-看通信模型的选择逻辑",
       
         title: "从 OpenClaw 的接入方式，看通信模型的选择逻辑",
