@@ -44,7 +44,29 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/repositories/";
           },
-        },{id: "post-从notebook-navigator-聊聊ai时代设计的重要性",
+        },{id: "post-测试-测试-还是测试",
+      
+        title: "测试，测试，还是测试",
+      
+      description: "",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2026/testing-testing-more/";
+        
+      },
+    },{id: "post-testing-testing-and-more-testing",
+      
+        title: "Testing, Testing, and More Testing",
+      
+      description: "",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2026/testing-testing-more-en/";
+        
+      },
+    },{id: "post-从notebook-navigator-聊聊ai时代设计的重要性",
       
         title: "从Notebook Navigator 聊聊AI时代设计的重要性",
       
