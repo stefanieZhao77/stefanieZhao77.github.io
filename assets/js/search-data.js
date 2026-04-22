@@ -55,17 +55,6 @@ ninja.data = [{
           window.location.href = "/blog/2026/testing-testing-more/";
         
       },
-    },{id: "post-testing-strategy-for-agent-workflows",
-      
-        title: "Testing Strategy for Agent Workflows",
-      
-      description: "",
-      section: "Posts",
-      handler: () => {
-        
-          window.location.href = "/blog/2026/four-tier-testing-en/";
-        
-      },
     },{id: "post-从notebook-navigator-聊聊ai时代设计的重要性",
       
         title: "从Notebook Navigator 聊聊AI时代设计的重要性",
