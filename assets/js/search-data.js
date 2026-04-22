@@ -66,6 +66,17 @@ ninja.data = [{
           window.location.href = "/blog/2026/four-tier-testing-strategy-for-agent-en/";
         
       },
+    },{id: "post-four-tier-testing-en",
+      
+        title: "Four Tier Testing En",
+      
+      description: "",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2026/four-tier-testing-en/";
+        
+      },
     },{id: "post-从notebook-navigator-聊聊ai时代设计的重要性",
       
         title: "从Notebook Navigator 聊聊AI时代设计的重要性",
