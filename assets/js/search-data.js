@@ -77,6 +77,17 @@ ninja.data = [{
           window.location.href = "/blog/2026/testing-en/";
         
       },
+    },{id: "post-testing-strategy-for-agent-workflows",
+      
+        title: "Testing Strategy for Agent Workflows",
+      
+      description: "",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2026/four-tier-testing-en/";
+        
+      },
     },{id: "post-testing-testing-and-more-testing-a-four-tier-strategy-for-agent-workflows",
       
         title: "Testing, Testing, and More Testing: A Four-Tier Strategy for Agent Workflows",
