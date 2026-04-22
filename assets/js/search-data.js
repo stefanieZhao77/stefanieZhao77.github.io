@@ -55,28 +55,6 @@ ninja.data = [{
           window.location.href = "/blog/2026/testing-testing-more/";
         
       },
-    },{id: "post-testing-testing-and-more-testing",
-      
-        title: "Testing, Testing, and More Testing",
-      
-      description: "",
-      section: "Posts",
-      handler: () => {
-        
-          window.location.href = "/blog/2026/testing-testing-more-en/";
-        
-      },
-    },{id: "post-testing-testing-and-more-testing-a-strategy-for-agent-workflows",
-      
-        title: "Testing, Testing, and More Testing: A Strategy for Agent Workflows",
-      
-      description: "",
-      section: "Posts",
-      handler: () => {
-        
-          window.location.href = "/blog/2026/testing-en/";
-        
-      },
     },{id: "post-testing-strategy-for-agent-workflows",
       
         title: "Testing Strategy for Agent Workflows",
@@ -86,17 +64,6 @@ ninja.data = [{
       handler: () => {
         
           window.location.href = "/blog/2026/four-tier-testing-en/";
-        
-      },
-    },{id: "post-testing-testing-and-more-testing-a-four-tier-strategy-for-agent-workflows",
-      
-        title: "Testing, Testing, and More Testing: A Four-Tier Strategy for Agent Workflows",
-      
-      description: "",
-      section: "Posts",
-      handler: () => {
-        
-          window.location.href = "/blog/2026/agent-testing-strategy-en/";
         
       },
     },{id: "post-从notebook-navigator-聊聊ai时代设计的重要性",
