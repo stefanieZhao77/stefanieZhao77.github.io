@@ -55,17 +55,6 @@ ninja.data = [{
           window.location.href = "/blog/2026/testing-testing-more/";
         
       },
-    },{id: "post-testing-testing-and-more-testing",
-      
-        title: "Testing, Testing, and More Testing",
-      
-      description: "",
-      section: "Posts",
-      handler: () => {
-        
-          window.location.href = "/blog/2026/testing-testing-more-en/";
-        
-      },
     },{id: "post-从notebook-navigator-聊聊ai时代设计的重要性",
       
         title: "从Notebook Navigator 聊聊AI时代设计的重要性",
