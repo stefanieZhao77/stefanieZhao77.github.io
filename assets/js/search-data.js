@@ -44,7 +44,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/repositories/";
           },
-        },{id: "post-测试-测试-还是测试",
+        },{id: "post-从工具到能力-saas-的位置正在消失",
+      
+        title: "从工具到能力：SaaS 的位置正在消失",
+      
+      description: "",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2026/from-tools-to-capabilities-saas-disappearing/";
+        
+      },
+    },{id: "post-测试-测试-还是测试",
       
         title: "测试，测试，还是测试",
       
