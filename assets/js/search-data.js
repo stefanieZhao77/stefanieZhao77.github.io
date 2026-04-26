@@ -55,6 +55,17 @@ ninja.data = [{
           window.location.href = "/blog/2026/from-tools-to-capabilities-saas-disappearing/";
         
       },
+    },{id: "post-from-tools-to-capabilities-why-saas-is-disappearing",
+      
+        title: "From Tools to Capabilities: Why SaaS Is Disappearing",
+      
+      description: "",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2026/from-tools-to-capabilities-saas-disappearing-en/";
+        
+      },
     },{id: "post-测试-测试-还是测试",
       
         title: "测试，测试，还是测试",
