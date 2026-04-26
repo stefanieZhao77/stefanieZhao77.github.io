@@ -7,7 +7,7 @@ tags: [SaaS, AI, Agent, Business Model]
 linkedin: true
 ---
 
-I recently read Amazon CEO Andy Jassy's shareholder letter, where he mentioned that Amazon's 2026 capital expenditure is projected at around $200 billion, with a significant portion going to AI infrastructure. OpenAI alone has signed long-term contracts exceeding $100 billion and has begun cutting SaaS budgets.
+I recently read Amazon CEO Andy Jassy's shareholder letter, where he mentioned that Amazon's 2026 capital expenditure is projected at around \$200 billion, with a significant portion going to AI infrastructure. OpenAI alone has signed long-term contracts exceeding \$100 billion and has begun cutting SaaS budgets.
 
 Many interpret this as a "bold bet on the future of AI." But from another perspective, it's more like a monopoly game — using capital scale to push the barrier to entry for AI infrastructure to a level that the vast majority of small and medium enterprises can never reach. This means the demand for AI infrastructure isn't something that will emerge in the future — it has already been locked in. Once computing power, models, and platforms are locked up by a handful of companies through capital scale, the barrier to entry at this layer becomes so high that most companies simply cannot participate.
 
