@@ -44,7 +44,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/repositories/";
           },
-        },{id: "post-从工具到能力-saas-的位置正在消失",
+        },{id: "post-从-amd-大会看-ai-的下一阶段-把知识沉淀成本地-agent",
+      
+        title: "从 AMD 大会看 AI 的下一阶段：把知识沉淀成本地 Agent",
+      
+      description: "",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2026/from-amd-conference-to-local-agent/";
+        
+      },
+    },{id: "post-从工具到能力-saas-的位置正在消失",
       
         title: "从工具到能力：SaaS 的位置正在消失",
       
