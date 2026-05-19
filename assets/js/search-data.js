@@ -55,6 +55,17 @@ ninja.data = [{
           window.location.href = "/blog/2026/from-amd-conference-to-local-agent/";
         
       },
+    },{id: "post-the-next-phase-of-ai-from-the-amd-conference-to-building-local-agents",
+      
+        title: "The Next Phase of AI: From the AMD Conference to Building Local Agents...",
+      
+      description: "",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2026/from-amd-conference-to-local-agent-en/";
+        
+      },
     },{id: "post-从工具到能力-saas-的位置正在消失",
       
         title: "从工具到能力：SaaS 的位置正在消失",
