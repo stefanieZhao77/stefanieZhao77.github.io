@@ -3,90 +3,90 @@ layout: post
 title: "How I Built a Software Development Agent Team with Paseo + Beads (Part 1)"
 date: 2026-06-21
 categories: [Blog]
-tags: ['Agent', 'AI', 'Software Design', 'Product Design']
+tags: [Agent, AI, Software Design, Product Design]
 linkedin: true
 ---
 
-This is a solution for burning tokens faster, haha.
+这是一个如何更快速烧token的解决方案，哈哈哈。
 
-This series will be divided into three parts, introducing the origin of my ideas, and what problems I discovered in practice, thus optimizing three different versions of the solution.
+这个系列会分三个部分，分别介绍我的想法的由来，以及在实践中我发现了哪些问题，从而一共优化了三版不同的方案。
 
-## Why I Wanted an Agent Team
+## 我为什么想要一个Agent Team
 
-When most people start using coding agents, they still treat them as enhanced assistants. For example, I tell it to help me fix this API, or check why this page is throwing errors, or add a unit test.
+大部分人开始用 coding agent 的时候，其实还是把它当成一个增强版助手。比如我告诉它帮我改一下这个接口，或者帮我检查一下这个页面为什么报错，再或者补一个单元测试。
 
-This approach works well, but it has a problem: humans are still the central node, and humans become the efficiency bottleneck.
+这种方式很好用，但它有一个问题：人还是那个中心节点，人也成为那个效率瓶颈。
 
-All tasks require me to switch, all contexts require me to organize, and all progress requires me to remember. The Agent is responsible for execution, but I'm responsible for stuffing the entire project back into its context.
+所有任务都要我来切换，所有上下文都要我来组织，所有进度都要我来记住。Agent 负责执行，但我负责把整个项目重新塞进它的上下文里。
 
-If it's just a small feature, this is not a problem. But when I start handling frontend, backend, database, testing, and deployment simultaneously, I find myself not really becoming lighter, just transferring some of the pressure of 'writing code' to 'constantly assigning tasks to Agents, explaining, checking, and correcting'.
+如果只是一个很小的功能，这没有问题。但当我开始同时处理前端、后端、数据库、测试、部署这些事情时，我发现自己并没有真的变轻松，只是把“写代码”的一部分压力转移成了“不断给 Agent 派活、解释、检查、纠偏”。
 
-So I thought, can we use agents to simulate human software development teams? We would have requirements, tasks, Issues, status, dependencies, Review, Release. The Agent Team is the same, it can't just be built on prompts, it also needs task structure.
+所以我想，是不是可以用agent来模拟人类软件开发团队。我们会有需求、任务、Issue、状态、依赖、Review、Release。那 Agent Team 也一样，不能只靠 prompt 堆起来，它也需要任务结构。
 
-## Paseo and Beads: One Manages People, One Manages Tasks
+## Paseo 和 Beads：一个管人，一个管事
 
-When I saw these two tools, I suddenly realized 'these two things can be combined'.
+我当时看到两个工具之后，突然意识到“这两个东西可以拼起来”用。
 
-The first is [Paseo](https://github.com/getpaseo/paseo). Simply put, it's a tool for managing coding agents. It runs a daemon locally, and you can connect to it through desktop, mobile, web, or CLI to start and manage different coding agents. So my understanding of Paseo is: it's more like an Agent dispatcher. The problem it solves is not 'what is the task', but 'how do these Agents run, how are they managed, and how can I conveniently see what they're doing'.
+第一个是 [Paseo](https://github.com/getpaseo/paseo)。简单来说，它是一个用来管理 coding agent 的工具。它会在本地跑一个 daemon，然后你可以通过桌面端、手机端、Web 或者 CLI 去连接它，启动和管理不同的 coding agent。所以我对 Paseo 的理解是：它更像一个 Agent 调度台。它解决的问题不是“任务是什么”，而是“这些 Agent 怎么跑起来、怎么被管理、怎么让我方便地看到它们在做什么”。
 
-The second is [Beads](https://github.com/gastownhall/beads). It's a local issue/memory system for coding agents. Compared to ordinary Markdown Todo, Beads emphasizes structured tasks, dependency relationships, and state tracking. In other words, it doesn't just let you write a bunch of to-do items, but turns tasks into work objects that agents can continuously read, update, and push forward. So it's very suitable for local data management.
+第二个是 [Beads](https://github.com/gastownhall/beads)。它是一个面向 coding agent 的本地 issue / 记忆系统。相比普通的 Markdown Todo，Beads 更强调结构化任务、依赖关系和状态追踪。也就是说，它不是只让你写一堆待办事项，而是把任务变成 agent 可以持续读取、更新和推进的工作对象。所以它很适合作为本地的数据管理。
 
-These two tools together, Paseo is responsible for making multiple Agents run and supporting multiple clients to view; Beads is responsible for making multiple Agents know what they should do, as a standard data source. I am responsible for defining goals, judging priorities, and accepting results.
+这两个工具放在一起，Paseo 负责让多个 Agent 跑起来，且支持多个客户端查看；Beads 负责让多个 Agent 知道自己该做什么，作为标准数据源。我来负责定义目标、判断优先级、验收结果。
 
-## First Version Workflow: Release → Issue → Agent
+## 第一版工作流：Release → Issue → Agent
 
-After having this idea, my first version design was still based on the original workflow. In previous articles, I also introduced how I used Obsidian as a data source to manage releases, features, and bugs, and how to synchronize with GitHub issues, then let agents automatically read issues to develop.
+有了这个想法之后，我的第一版设计还是基于原有的流程建立。之前的文章中我也介绍过我是如何把Obsidian作为数据源用来管理release，feature和bug，以及如何跟GitHub issue同步，然后让agent开自动读取issue开发的。
 
-The entry point is still Release. That is, I first define a version goal: what features should be completed in this version, what problems should be fixed, and what state should be achieved in the end. Then, I will split this Release into a set of Issues and put them in Beads. The Issues here are roughly divided into two categories: one is Feature, which is the function that needs to be added or modified; the other is Bug, which is the problem discovered during development, testing, or use.
+入口依旧是 Release。也就是说，我会先定义一个版本目标：这一版大概要完成哪些功能，修复哪些问题，最后要达到什么样的状态。然后，我会自己把这个 Release 拆成一组 Issue，放到 Beads 里。这里的 Issue 大体分成两类：一类是 Feature，也就是需要新增或改造的功能；另一类是 Bug，也就是在开发、测试或者使用过程中发现的问题。
 
-To make this agent team work automatically, I added a Dispatcher and wrote some rules for task allocation logic. The Dispatcher's role is to read the current Issues from Beads and assign them to different Agents for processing. Features are usually taken by development Agents and implemented following TDD, and the Test Agent will continuously record discovered Bugs to Beads. Bugs can be automatically triggered, taken, and attempted to be fixed by idle Agents.
+为了让这个agent team自动工作起来，我增加了一个Dispatcher，并且写入了一些rules用于任务的分配逻辑。这个 Dispatcher 的作用，是从 Beads 里读取当前存在的 Issue，然后把它们分配给不同的 Agent 去处理。Feature 通常会由开发 Agent 领取并遵循TDD来实现，并且Test agent会持续地将发现的Bug记录到Beads中。而Bug 则可以被空闲的Agent 自动触发、自动领取、自动尝试修复。
 
-At this point, the entire process becomes a continuously running cycle. And because Paseo supports different providers, I use a configuration file to assign different models to different agents (this step purely depends on personal financial resources, those with token freedom can ignore it). Finally, after review, I intervene to see if the function is completed according to my ideas and requirements, and after final approval, automatically submit a PR.
+这时候整个流程就变成了一个不断运转的循环。而且因为Paseo支持不同的provider，所以我用一个配置文件给不同的agent分配的不同的模型（这一步纯看个人财力，token自由的可以忽略）。最终在review之后，再由我来介入看功能是否按照我的想法和需求完成，最终批准后自动提交PR。
 
-And I made a kanban for the entire process, where you can see which issues are being worked on by which agents, which ones are in my approval process, and you can directly approve in the interface, and then automatically submit a PR.
+而且我为整套流程做了一个kanban，可以看到哪些issue是给哪些agent在做，哪些走到了我审批的流程，并且可以直接在界面中审批，然后就会自动提交PR了。
 
-## It Actually Ran
+## 它确实跑起来了
 
-When the first version actually ran, I was actually very excited.
+第一版真正跑起来的时候，我其实是很兴奋的。
 
-However, after this process ran for a while, I also saw many problems.
+不过，这套流程跑了一段时间之后，我也看到了很多问题。
 
-The first problem is that the early requirement clarification and task splitting still completely depend on me.
+第一个问题是，前期的需求澄清和任务拆分仍然完全依赖我。
 
-Although Agents can take Issues, the Dispatcher can assign tasks, and Bugs discovered by testing can be written back to Beads, how to define the initial Feature, how to split requirements, and how to write Issues still depend on me. This means that the entire system seems to have an automatic cycle, but its efficiency bottleneck is still me. As long as I don't split the requirements clearly, the Agents behind cannot steadily advance. As long as I don't write the Issues clearly, no matter how actively the Dispatcher assigns tasks, it just pushes unclear tasks to Agents faster.
+虽然 Agent 可以领取 Issue，Dispatcher 可以分配任务，测试发现的 Bug 也可以重新写回 Beads，但最开始的 Feature 怎么定义、需求怎么拆、Issue 怎么写，还是要靠我。这意味着整个系统看起来已经有了自动循环，但它的效率瓶颈还是我。只要我没有把需求拆清楚，后面的 Agent 就无法稳定推进。只要我没有把 Issue 写明白，Dispatcher 分配得再积极，也只是把不清楚的任务更快地推给 Agent。
 
-The second problem is that Issues must be written very clearly.
+第二个问题是，Issue 必须写得非常明确。
 
-When developers get a vague task, they often proactively ask questions, or rely on project experience to complete the context. But Agents don't necessarily do this. Sometimes they start executing overconfidently, and even make wrong judgments based on an incomplete Issue.
+开发者在拿到一个模糊任务时，往往会主动追问，或者凭借项目经验补全上下文。但 Agent 不一定会这样。它有时候会过度自信地开始执行，甚至会根据一个不完整的 Issue 做出错误判断。
 
-If the Issue doesn't clearly write the background, boundaries, acceptance criteria, and related dependencies, it may misunderstand the task. If the relationship between multiple Issues is not clearly described, it may also make changes where it shouldn't. If a Bug simply writes the phenomenon without explaining which function, version, or context it appears in, the Agent can easily treat it as an isolated problem.
+如果 Issue 里没有写清楚背景、边界、验收标准和相关依赖，它就可能误解任务。如果多个 Issue 之间的关系没有描述清楚，它也可能在不该动的地方动手。如果一个 Bug 只是简单写了现象，没有说明它出现在哪个功能、哪个版本、哪个上下文里，Agent 就很容易把它当成一个孤立问题处理。
 
-The third problem is that Agents don't necessarily really understand the background.
+第三个问题是，Agent 不一定真的理解背景。
 
-This is the most critical problem in the first version. In the Release → Issue splitting method, I originally thought that Release provided the general direction and Issue provided specific tasks, which would be enough. But after actually running it, I found that Agents often only receive a specific Issue, not the complete Release background.
+这是第一版里最关键的问题。在 Release → Issue 的拆分方式里，我原本以为 Release 提供了大方向，Issue 提供了具体任务，这样就足够了。但真正跑起来以后我发现，Agent 领取到的往往只是某一个 Issue，而不是完整的 Release 背景。
 
-That is, it knows it has a work order, but doesn't necessarily know why this work order exists. It knows it needs to fix a Bug, but doesn't necessarily know the relationship between this Bug and the current version goal. It knows it needs to implement a Feature, but doesn't necessarily understand the position of this Feature in the entire product process.
+也就是说，它知道自己手里有一张工单，但不一定知道这张工单为什么存在。它知道要修一个 Bug，但不一定知道这个 Bug 和当前版本目标有什么关系。它知道要实现一个 Feature，但不一定理解这个 Feature 在整个产品流程里的位置。
 
-For me, there is usually a lot of implicit information behind an Issue: why this version needs to do it, which functions cannot be changed temporarily, which modules are only temporary solutions, and which problems should be solved in subsequent versions. But for Agents, if this background is not explicitly written into the Issue, or not transmitted to it through some mechanism, it is likely to only see local tasks and not the overall intention.
+对我来说，一个 Issue 背后通常有很多隐含信息：这个版本为什么要做它，哪些功能暂时不能动，哪些模块只是临时方案，哪些问题应该等后续版本解决。但对 Agent 来说，如果这些背景没有被显式写进 Issue，或者没有通过某种机制传递给它，它就很可能只看到局部任务，看不到整体意图。
 
-The fourth problem is that temporarily added Bugs will make the system chaotic.
+第四个问题是，临时加入的 Bug 会让系统变得混乱。
 
-At first, I thought it was natural for Bugs to automatically enter Beads and be automatically taken and solved by Agents. Because this looks like a self-healing cycle: testing discovers problems, writes back Issues, and Agents fix them. But later I found that if there is a lack of Release background and task context, temporarily added Bugs will disrupt the Agent's understanding of current work.
+一开始，我觉得 Bug 可以自动进入 Beads，再由 Agent 自动领取解决，这是一件很自然的事情。因为这看起来很像一个自我修复的循环：测试发现问题，写回 Issue，Agent 再去修。但后来我发现，如果缺少 Release 背景和任务上下文，临时加入的 Bug 会打乱 Agent 对当前工作的理解。
 
-Some Bugs are actually just intermediate states produced when the current Feature is not completed, some Bugs are not consistent with the current Release goals and should be processed later, some Bugs look urgent but actually depend on another task that has not been completed, and some Bugs will make the Agent jump to another module to change code, resulting in new conflicts.
+有些 Bug 其实只是当前 Feature 没完成时产生的中间状态，有些 Bug 和当前 Release 的目标并不一致，应该放到后面处理，有些 Bug 看起来很急，但实际上它依赖另一个还没完成的任务，还有些 Bug 会让 Agent 跳到另一个模块里改代码，结果引入新的冲突。
 
-At this time, although the number of Issues in Beads has increased, the system is not necessarily smarter. Because Issues themselves are just task objects, they also need sufficient background, priority, and dependency relationships to become truly executable workflows.
+这时候，Beads 里的 Issue 数量虽然变多了，但系统并不一定更聪明。因为 Issue 本身只是任务对象，它还需要足够的背景、优先级和依赖关系，才能变成真正可执行的工作流。
 
-## The First Version Was Not a Failure, But a Necessary Prototype
+## 第一版不是失败，而是必要的原型
 
-The first version was not a failure.
+第一版不是失败。
 
-It completed a very important task: letting me string multiple Agents into a runnable development cycle for the first time. Before this version, my question was: can multiple Agents collaborate around the same project? After this version, my question became: if they can really collaborate, how should I organize them to avoid chaos?
+它完成了一个非常重要的任务：让我第一次把多个 Agent 串成了一个可以运转的开发循环。在这一版之前，我的问题是：多个 Agent 能不能围绕同一个项目协作？在这一版之后，我的问题变成了：如果它们真的能协作，那我应该如何组织它们，才能避免混乱？
 
-The first version showed me the possibility of an Agent Team. But it also made me realize that just having Issues and automatic assignment is not enough. Because what really limits efficiency is not the Agent's ability to execute tasks, but whether tasks are clarified before entering the system; whether Agents understand the background when taking tasks; whether temporary Bugs are placed in the correct position when entering the cycle. That is, the difficulty of an Agent Team is not just 'letting Agents work', but 'letting Agents do the right work in the right context'.
+第一版让我看到了 Agent Team 的可能性。但它也让我意识到，光有 Issue 和自动分配是不够的。因为真正限制效率的，不是 Agent 执行任务的能力，而是任务进入系统之前有没有被澄清；Agent 领取任务时有没有理解背景；临时 Bug 进入循环时有没有被放到正确的位置。也就是说，Agent Team 的难点不只是“让 Agent 干活”，而是“让 Agent 在正确的上下文里干正确的活”。
 
-So in the second version, I started trying to solve these problems.
+所以第二版里，我开始尝试解决这些问题。
 
-Since in the first version, requirement clarification, task splitting, and priority judgment are still on me, can we also split these responsibilities? Since in real software teams there are product managers, project managers, frontend, backend, database, and testing, should the Agent Team also be organized this way?
+既然第一版里需求澄清、任务拆分、优先级判断都还压在我身上，那能不能把这些职责也拆出去？既然真实的软件团队里有产品经理、项目经理、前端、后端、数据库和测试，那 Agent Team 是不是也应该这样组织？
 
-So, I started the second version experiment: splitting the Agent Team more like a real software development team. As a result, new problems also came.
+于是，我开始了第二版实验：把 Agent Team 拆得更像一个真实的软件开发team。结果，新的问题也来了。
