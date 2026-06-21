@@ -55,6 +55,17 @@ ninja.data = [{
           window.location.href = "/blog/2026/%E6%88%91%E6%98%AF%E6%80%8E%E4%B9%88%E7%94%A8-paseo-beads-%E6%90%AD%E5%BB%BA%E4%BA%86%E4%B8%80%E4%B8%AA%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91-agent-team%E4%B8%80/";
         
       },
+    },{id: "post-how-i-built-a-software-development-agent-team-with-paseo-beads-part-1",
+      
+        title: "How I Built a Software Development Agent Team with Paseo + Beads (Part...",
+      
+      description: "",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2026/%E6%88%91%E6%98%AF%E6%80%8E%E4%B9%88%E7%94%A8-paseo-beads-%E6%90%AD%E5%BB%BA%E4%BA%86%E4%B8%80%E4%B8%AA%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91-agent-team%E4%B8%80-en/";
+        
+      },
     },{id: "post-从-amd-大会看-ai-的下一阶段-把知识沉淀成本地-agent",
       
         title: "从 AMD 大会看 AI 的下一阶段：把知识沉淀成本地 Agent",
