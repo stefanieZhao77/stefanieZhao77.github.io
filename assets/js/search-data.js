@@ -44,7 +44,29 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/repositories/";
           },
-        },{id: "post-我是怎么用-paseo-beads-搭了一个会烧-token-的软件开发-agent-team-三",
+        },{id: "post-ai-给你的不是判断力-是自信",
+      
+        title: "AI 给你的不是判断力，是自信",
+      
+      description: "",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2026/ai-gives-you-confidence-not-judgment/";
+        
+      },
+    },{id: "post-ai-doesn-39-t-give-you-judgment-it-gives-you-confidence",
+      
+        title: "AI Doesn&#39;t Give You Judgment, It Gives You Confidence",
+      
+      description: "",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2026/ai-gives-you-confidence-not-judgment-en/";
+        
+      },
+    },{id: "post-我是怎么用-paseo-beads-搭了一个会烧-token-的软件开发-agent-team-三",
       
         title: "我是怎么用 Paseo + Beads 搭了一个会烧 token 的软件开发 Agent Team（三）",
       
