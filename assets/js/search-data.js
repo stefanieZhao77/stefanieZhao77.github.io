@@ -44,7 +44,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/repositories/";
           },
-        },{id: "post-ai-给你的不是判断力-是自信",
+        },{id: "post-企业不需要盲目追求大模型-真正的安全-是把智能装进流程里",
+      
+        title: "企业不需要盲目追求大模型：真正的安全，是把智能装进流程里",
+      
+      description: "",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2026/enterprise-llm-security/";
+        
+      },
+    },{id: "post-ai-给你的不是判断力-是自信",
       
         title: "AI 给你的不是判断力，是自信",
       
