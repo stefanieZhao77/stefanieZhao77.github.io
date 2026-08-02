@@ -55,6 +55,17 @@ ninja.data = [{
           window.location.href = "/blog/2026/enterprise-llm-security/";
         
       },
+    },{id: "post-enterprises-don-39-t-need-to-blindly-chase-big-models-real-security-is-embedding-intelligence-into-workflows",
+      
+        title: "Enterprises Don&#39;t Need to Blindly Chase Big Models: Real Security Is Embedding Intelligence...",
+      
+      description: "",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2026/enterprise-llm-security-en/";
+        
+      },
     },{id: "post-ai-给你的不是判断力-是自信",
       
         title: "AI 给你的不是判断力，是自信",
