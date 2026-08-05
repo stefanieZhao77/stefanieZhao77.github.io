@@ -44,7 +44,29 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/repositories/";
           },
-        },{id: "post-企业不需要盲目追求大模型-真正的安全-是把智能装进流程里",
+        },{id: "post-from-ai-coding-to-a-merged-pr-how-i-run-an-issue-driven-agent-team",
+      
+        title: "From AI Coding to a Merged PR: How I Run an Issue-Driven Agent...",
+      
+      description: "",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2026/from-ai-coding-to-a-merged-pr-en/";
+        
+      },
+    },{id: "post-ai-编码-从-agent-团队到-pr",
+      
+        title: "AI 编码：从 Agent 团队到 PR",
+      
+      description: "",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2026/ai-coding-agent-team-to-pr/";
+        
+      },
+    },{id: "post-企业不需要盲目追求大模型-真正的安全-是把智能装进流程里",
       
         title: "企业不需要盲目追求大模型：真正的安全，是把智能装进流程里",
       
