@@ -55,6 +55,17 @@ ninja.data = [{
           window.location.href = "/blog/2026/%E5%88%AB%E7%A5%9E%E8%AF%9D-skill/";
         
       },
+    },{id: "post-don-39-t-mythologize-skills-what-matters-is-the-way-of-working-behind-them",
+      
+        title: "Don&#39;t Mythologize Skills — What Matters Is the Way of Working Behind Them...",
+      
+      description: "",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2026/dont-mythologize-skills-en/";
+        
+      },
     },{id: "post-from-ai-coding-to-a-merged-pr-how-i-run-an-issue-driven-agent-team",
       
         title: "From AI Coding to a Merged PR: How I Run an Issue-Driven Agent...",
