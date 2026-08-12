@@ -44,7 +44,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/repositories/";
           },
-        },{id: "post-from-ai-coding-to-a-merged-pr-how-i-run-an-issue-driven-agent-team",
+        },{id: "post-别神话-skill-值钱的是背后的工作方式",
+      
+        title: "别神话 Skill，值钱的是背后的工作方式",
+      
+      description: "",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2026/%E5%88%AB%E7%A5%9E%E8%AF%9D-skill/";
+        
+      },
+    },{id: "post-from-ai-coding-to-a-merged-pr-how-i-run-an-issue-driven-agent-team",
       
         title: "From AI Coding to a Merged PR: How I Run an Issue-Driven Agent...",
       
