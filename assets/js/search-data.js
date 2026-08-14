@@ -44,7 +44,29 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/repositories/";
           },
-        },{id: "post-别神话-skill-值钱的是背后的工作方式",
+        },{id: "post-少做一点反而更好-pi-极简哲学详解",
+      
+        title: "少做一点反而更好，Pi 极简哲学详解",
+      
+      description: "",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2026/pi-minimalism/";
+        
+      },
+    },{id: "post-doing-less-is-better-the-minimalist-philosophy-of-pi",
+      
+        title: "Doing Less Is Better: The Minimalist Philosophy of Pi",
+      
+      description: "",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2026/pi-minimalism-en/";
+        
+      },
+    },{id: "post-别神话-skill-值钱的是背后的工作方式",
       
         title: "别神话 Skill，值钱的是背后的工作方式",
       
