@@ -44,7 +44,29 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/repositories/";
           },
-        },{id: "post-少做一点反而更好-pi-极简哲学详解",
+        },{id: "post-ai-agent-时代的测试与验收-从-bdd-说起",
+      
+        title: "AI Agent 时代的测试与验收，从 BDD 说起",
+      
+      description: "",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2026/ai-agent-testing-acceptance-bdd/";
+        
+      },
+    },{id: "post-testing-and-acceptance-in-the-ai-agent-era-it-starts-with-bdd",
+      
+        title: "Testing and Acceptance in the AI Agent Era: It Starts with BDD",
+      
+      description: "",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2026/ai-agent-testing-acceptance-bdd-en/";
+        
+      },
+    },{id: "post-少做一点反而更好-pi-极简哲学详解",
       
         title: "少做一点反而更好，Pi 极简哲学详解",
       
