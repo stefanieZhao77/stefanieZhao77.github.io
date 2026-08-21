@@ -44,7 +44,29 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/repositories/";
           },
-        },{id: "post-ai-agent-时代的测试与验收-从-bdd-说起",
+        },{id: "post-以后公司雇佣的是你自己的agent",
+      
+        title: "以后公司雇佣的是你自己的agent",
+      
+      description: "",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2026/%E4%BB%A5%E5%90%8E%E5%85%AC%E5%8F%B8%E9%9B%87%E4%BD%A3%E7%9A%84%E6%98%AF%E4%BD%A0%E8%87%AA%E5%B7%B1%E7%9A%84Agent/";
+        
+      },
+    },{id: "post-the-agent-you-hire-is-your-own-agent-en",
+      
+        title: "The Agent You Hire Is Your Own Agent En",
+      
+      description: "",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2026/the-agent-you-hire-is-your-own-agent-en/";
+        
+      },
+    },{id: "post-ai-agent-时代的测试与验收-从-bdd-说起",
       
         title: "AI Agent 时代的测试与验收，从 BDD 说起",
       
