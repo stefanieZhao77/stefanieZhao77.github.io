@@ -44,9 +44,9 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/repositories/";
           },
-        },{id: "post-以后公司雇佣的是你自己的agent",
+        },{id: "post-以后公司雇佣的-是你自己的-agent",
       
-        title: "以后公司雇佣的是你自己的agent",
+        title: "以后公司雇佣的，是你自己的 Agent",
       
       description: "",
       section: "Posts",
@@ -55,9 +55,9 @@ ninja.data = [{
           window.location.href = "/blog/2026/%E4%BB%A5%E5%90%8E%E5%85%AC%E5%8F%B8%E9%9B%87%E4%BD%A3%E7%9A%84%E6%98%AF%E4%BD%A0%E8%87%AA%E5%B7%B1%E7%9A%84Agent/";
         
       },
-    },{id: "post-the-agent-you-hire-is-your-own-agent-en",
+    },{id: "post-the-agent-your-company-hires-will-be-your-own",
       
-        title: "The Agent You Hire Is Your Own Agent En",
+        title: "The Agent Your Company Hires Will Be Your Own",
       
       description: "",
       section: "Posts",
