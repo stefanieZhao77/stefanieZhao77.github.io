@@ -44,7 +44,29 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/repositories/";
           },
-        },{id: "post-以后公司雇佣的-是你自己的-agent",
+        },{id: "post-一千个-agent-自发站队-ai-也有羊群效应-而且比人更严重",
+      
+        title: "一千个 Agent 自发站队，AI 也有羊群效应，而且比人更严重",
+      
+      description: "",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2026/thousand-agents-herd/";
+        
+      },
+    },{id: "post-a-thousand-agents-pick-sides-on-their-own-ai-has-a-herd-effect-too-and-it-39-s-worse-than-ours",
+      
+        title: "A Thousand Agents Pick Sides on Their Own: AI Has a Herd Effect...",
+      
+      description: "",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2026/thousand-agents-herd-en/";
+        
+      },
+    },{id: "post-以后公司雇佣的-是你自己的-agent",
       
         title: "以后公司雇佣的，是你自己的 Agent",
       
