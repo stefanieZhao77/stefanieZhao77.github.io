@@ -7,7 +7,7 @@ tags: [Jev, AI Agent, 大语言模型, 软件工程, 人工智能]
 summary: "Jev 不聊天、不写代码，只给程序做受约束的判断。本文解释它为什么适合 Agent 的小判断点、真实成本优势、限制与接入方式。"
 cover: /assets/images/posts/2026/09/jev-cover-v1.png
 lang: zh-CN
-translation_url: /blog/2026/what-is-jev-semantic-decision-model/
+translation_url: /blog/2026/what-is-jev-semantic-decision-model-en/
 linkedin: false
 x: false
 ---
