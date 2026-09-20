@@ -1,0 +1,238 @@
+---
+layout: post
+title: "最近很火的 Jev 到底是什么？一篇讲清它干嘛用和怎么用"
+date: 2026-09-20 19:00:00 +0800
+categories: [Blog]
+tags: [Jev, AI Agent, 大语言模型, 软件工程, 人工智能]
+summary: "Jev 不聊天、不写代码，只给程序做受约束的判断：固定选项、评分或概率。本文拆开它为什么适合 Agent 的小判断点、那些夸张数字该怎么看，以及如何接入和避坑。"
+cover: /assets/images/posts/2026/09/jev-cover-v1.png
+lang: zh-CN
+translation_url: /blog/2026/what-is-jev-semantic-decision-model/
+linkedin: false
+x: false
+---
+
+你有没有干过这种事。为了判断一条新闻该不该进今天的日报，你调动了一个几千亿参数的模型。它想两秒，吐出一段"综合来看，这条新闻具有一定的相关性"，然后你还得写一堆正则和 try-except，从这段废话里把那个"是"抠出来。
+
+一道判断题，走了一趟造句流程。
+
+这几天刷屏的 Jev，干的就是把这趟流程砍掉。上线不到一周，X 上关于它的内容堆到七百多条，Vercel AI Gateway 上架 24 小时内就有接近 13% 的付费团队在调用它，这个采用速度超过 Vercel 此前上过的任何一个模型。
+
+**一句话讲清它是什么。ChatGPT 给人写答案，Jev 给程序做判断。**它不写代码、不聊天，连自由文本接口都没有，只做三种题，几百毫秒返回一个带把握程度的概率。
+
+## 为什么大模型做判断题这么别扭
+
+根子在自回归。
+
+大模型是一个字一个字往外蹦的。哪怕你要的只是一个 JSON，它也得先把那串字符"写"出来，再由你的程序去解析。写一个词要停下来琢磨下一个词，前面所有内容还得在注意力里重算一遍。
+
+打个比方。这像个写作文的人，每落一个字都要回想一遍前面写了啥再决定下一个字。这套机制换来了极强的创作能力，写小说、写代码、写分析报告都靠它。
+
+可你让它做一道是非题，等于开重型卡车去路口买瓶水。
+
+卡车本身没问题，是这道活儿不值当。
+
+更麻烦的是价格。接入一个判断点容易，问题是 agent 一条任务里要判断几十上百次。判断邮件是不是投诉调一次，决定下一步用哪个工具再调一次，检查任务完成没有又调一次，不确定再让另一个模型复核一次。用户看着是完成了一项任务，后台已经烧了几十次调用。
+
+## Jev 是怎么绕过去的
+
+Jev 来自旧金山的 TypeSafe AI，2026 年 9 月 15 日发布，刚拿了 4000 万美元种子轮，DCVC 领投。创始人 Diogo Almeida 出身 OpenAI，是 InstructGPT 论文的作者之一。
+
+名字取自经济学家 William Stanley Jevons，就是提出"杰文斯悖论"那位，技术让某样东西更便宜，总消耗量反而会涨。拿这个名字给一个主打"便宜到可以随便调"的模型命名，意图挺明显。
+
+它的做法是把输出限制死。
+
+输入是一段 state，也就是你程序当前的状态。输出只有三种形式
+
+| 题型 | 它回答什么 | 返回什么 |
+|---|---|---|
+| Choice | 从固定选项里选一个 | choice、每个选项的概率、confidence |
+| Score | 在一组有顺序的等级上打分 | score、每个等级的概率、confidence |
+| Noul | 这个判断成立的概率 | 一个 0 到 1 的浮点数 |
+
+假设客户说"鞋码不对，而且退款还没到账"。你可以同时问它这单该转给哪个部门、客户是否在要求退款、情绪有多激烈。它不写解释，直接把选项、分数、概率交回来。
+
+Choice 最多支持 255 个选项，所以**它不可能凭空编出第 256 个**。官方管这个叫"零幻觉"，这个说法后面要打折，先记住它的机制。
+
+因为答案被限制在你给的槽位里，它不需要逐字解码，直接在输出层一次性算出各个选项的概率分布。官方口径是端到端 70 到 500 毫秒。
+
+还有个机制挺狠。**同一段材料只读一遍，多道题并行作答。**官方说加题几乎不影响响应时间，所以别把问题拆成多次调用，那是白白重复付长材料的钱。
+
+TypeSafe 把它这类东西叫 System One Model，借的是卡尼曼那套快慢思考的分法。大模型一直在模仿慢思考，写长分析做复杂推理。Jev 补的是那个又快又轻、凭直觉下判断的快思考。官方文档还有一个比方我觉得更准，管它叫"会理解语义的函数调用"。
+
+**但真正值钱的不是快，是概率校准。**
+
+以前的小分类模型也快，可经常蜜汁自信，猜错了还标着 99%。那种置信度没法用，你不敢拿它写分流策略。Jev 的训练目标叫 RLCD（Reinforcement Learning for Calibrated Decisions），就是让置信度像靠谱的天气预报，说八成把握的时候，统计上一百次里真能对八十次左右。
+
+这件事做成了，工程上才有意义。你可以放心地写一行 `if confidence > 0.9`，高把握自动过，低把握转人工或者转大模型。
+
+## 那些夸张的数字，注脚都写了什么
+
+TypeSafe 官网挂着两个数字，最高快 193.6 倍、便宜 444.6 倍。这两个数的出处要看清楚。
+
+它来自 TypeSafe 自己的 workflow eval，参考标准是 GPT-6 Astra 和 Fable 5.1 的平均，测试用的 workflow 是 TypeSafe 自己的团队写的。公司自己也承认，这个增益处在真实使用的**高端**。另外一个细节，他们没发证明这个价格没有被补贴。
+
+再看那个"比 Claude Fable 5.1 便宜 238 倍"，这是拿输入价格除以输入价格算出来的，$10 除以 $0.042。可团队真正在用的不是那个价位。
+
+| 模型 | 输入（每百万 token） | 输出（每百万 token） | 跟 Jev 比 |
+|---|---|---|---|
+| TypeSafe Jev | $0.042 | 免费 | 基准 |
+| GPT-5.6 Luna | $0.20 | $1.20 | 约 4.8 倍 |
+| GPT-5.6 Terra | $2 | $12 | 约 48 倍 |
+| Claude Fable 5.1 | $10 | $50 | 约 238 倍 |
+
+对比那个已经很便宜的 Luna，差距只剩 4.8 倍。
+
+更有说服力的是 TypeSafe 自家那张准确率对成本的图。四个业务 workflow 的平均准确率，Jev 大约 68%，成本 $0.0004；GPT-5.6 Luna 大约 67%，成本 $0.0035；GPT-5.6 Sol 74%，$0.085；Claude Opus 5 73%，$0.17。
+
+**成本掉了一个数量级，准确率跟 Luna 打平。**它没让判断变准，它让判断变便宜。这两件事差别很大。
+
+## 第三方实测给的答案更实在
+
+有人认真跑了两轮。100 条中文资讯乘以 3 道题，一共 300 个判断，对照组是 Qwen 3.8 Flash，从上海串行调用。作者自报的数据，样本由 25 个模板各变 4 次造出来，任务偏简单，所以要留余地看。
+
+三个数字值得记住。
+
+**第一，高把握档确实可信。**300 个判断里 255 个落在"九成以上把握"，全对。把 80% 设成自动放行线，能放掉 89% 的请求，只错 1 个。按置信度分流这套做法，至少在简单任务上站得住。
+
+**第二，它赢的不是快，是没有长尾。**上海实测中位数约 0.7 秒，明显慢于官方 0.1 秒的口径，但最慢一次也只有 1.5 秒。对照的 Qwen Flash 中位数差不多，最慢一次却到了 32 秒。对一个卡在主链路上的判断点来说，可预测比平均快更值钱。
+
+**第三，对上轻量模型它不占便宜。**准确率 94.7% 对 93.0%，费用都是 0.003 美元，基本打平。官方那个"便宜 40 到 400 倍"，比的是前沿大模型。
+
+## 它做不到的事，比它能做的事更要记牢
+
+先把官方自己承认的说了。
+
+**"零幻觉"不等于不会错。**它只保证答案落在你给的选项里，在合法选项里选错照样会发生，TypeSafe 的 CEO 自己认过这一点。那个 0% 的说法指格式错误，不是实测的答案错误率。
+
+然后是实测暴露出来的偏科清单。数数、精确算术、日期先后推算都不太靠谱；长链条多跳推理的准确率会明显下滑；主要用英语训练，中文能用但弱一截，做细腻的中文语义判断之前务必先拿自己的样本测一遍。
+
+**提示词注入依然有效。**用户在输入里夹带诱导指令，它照样会被带偏。所以涉及退款、资金、删库这类高风险动作，底层硬编码的权限拦截该留还得留。
+
+还有个结构性限制，输入上限约 3.2 万 token。有人想把它塞进自己的日常工具提效，试了四次全卡住，卡住的原因都不在模型，接口每次正常返回，中文判断也准。卡的是三件事。它看不到足够的内容，为了塞进上限得先砍材料，砍完它就没得判断了；你已经包月的大模型，多判断一次的边际成本本来就是零，中间再插一层只是多一秒延迟、多一个故障点；它只会判断不会干活，搬数据改文件都得靠第三方壳，坑全都落在那层壳上。
+
+最后说说那个刷屏的交易演示。有人跑了两千次回测，结论是 Jev 的交易判断没跑赢"永远做多"。他给的自查清单很值得抄下来。展示的是速度还是收益证据，这两件事完全不同。基准是什么，命中率过半不算数，要跟同样本下的"永远做多"和简单动量规则比。到底有多少独立信息，样本重不重叠、试了多少组配置、是不是只把最好那组拿出来。
+
+他自己差点栽的跟头更有意思。BTC 上"永远做多"跑出 t 值 5.38，看着非常显著。但持有 30 根 K 线却每根都做决策，相邻样本要共享 29 根价格路径，按有效样本量粗略修正之后，t 值从 5.38 掉到 0.98。他还试过纯抛硬币，在 DOGE 一分钟数据上跑出了 t 值 2.11。
+
+这跟 Jev 好不好没关系，跟你要不要信那张收益截图关系很大。
+
+## 怎么上手
+
+官方通道在 typesafe.ai 排 waitlist，通过后在 console 里建 API Key，有人反馈填完附加问卷几小时就过了。不想排队的话有三条捷径，OpenRouter 注册后直接调 `typesafe/jev-1.13`，Vercel AI Gateway 上是 `typesafe-ai/jev`，Cloudflare Workers AI 也上了，价格跟官方一致。官方 API 里的模型名是 `jev-latest`。
+
+**有个坑先说。**官方 SDK 读的是 `TYPESAFE_API_KEY`，但给 Claude Code 和 Codex 用的那个代码评审插件读的是 `JEV_API_KEY`，两个变量名，别混。
+
+装 SDK 一行命令，Python 要 3.10 以上。
+
+```
+pip install typesafe-sdk
+npm install @typesafe-ai/sdk
+```
+
+最原始的用法是往一个端点发 state 加一组问题。所有题共用这段 state，并行作答。
+
+```bash
+curl -X POST https://api.typesafe.ai/v1/systemone \
+  -H "Authorization: Bearer $TYPESAFE_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "model": "jev-latest",
+    "state": "Hi, I have been trying to connect my Stripe account for 3 days and it keeps failing. I am losing sales. Please help ASAP.",
+    "questions": {
+      "is_urgent": {
+        "type": "noul",
+        "instructions": "Does this message express urgency or time-sensitivity?"
+      },
+      "department": {
+        "type": "choice",
+        "instructions": "Which team should handle this?",
+        "criteria": {
+          "billing": "Payments, invoicing, refunds",
+          "technical": "Bugs, outages, integrations",
+          "sales": "Pricing, upgrades, new accounts"
+        }
+      },
+      "frustration": {
+        "type": "score",
+        "instructions": "How frustrated is the customer?",
+        "criteria": ["Calm, just stating facts", "Frustrated but civil", "Very angry, strong language"]
+      }
+    }
+  }'
+```
+
+Python SDK 读起来更顺，同样一次调用把三道题一起交出去。
+
+```python
+from typesafe_sdk import Choice, Noul, Score, TypeSafeClient
+
+client = TypeSafeClient()  # 读 TYPESAFE_API_KEY，默认 jev-latest
+
+resp = client.system_one(
+    state="我三天前申请退款到现在还没到账，鞋子也还没发货。",
+    questions={
+        "is_refund_request": Noul(
+            instructions="客户是否在明确要求退款？"
+        ),
+        "department": Choice(
+            instructions="这单该转到哪个组？",
+            criteria={
+                "billing": "账单、发票、退款金额",
+                "logistics": "发货、物流、地址",
+                "aftersale": "退换货、质量问题",
+            },
+        ),
+        "frustration": Score(
+            instructions="客户的情绪激烈程度？",
+            criteria=["陈述事实", "不满但克制", "非常生气"],
+        ),
+    },
+)
+
+print(resp.answers["department"].choice,
+      resp.answers["department"].confidence,
+      resp.answers["department"].probabilities)
+print(resp.answers["is_refund_request"].noul)
+print(resp.model)  # 建议打日志，例如 jev-1.13.0
+```
+
+这里有个细节特别值得琢磨。**confidence 和最高那个选项的概率是两回事。**
+
+官方文档的例子里，billing 以 0.84 的概率胜出，可 confidence 只有 0.596，因为排第二的 technical 还占着 0.159。赢是赢了，赢得不够干净。你要是只看概率不看 confidence，就容易放过这种骑墙的判断。
+
+拿回答案之后，有几条经验。
+
+分工要卡严。让 Jev 只负责提炼原始判断，日期计算、计数、排序、阈值比较这些活留给你自己的代码，权限和策略也在自己代码里，别指望它替你把关。
+
+阈值按错误的代价调，别照抄别人的数字。退款误放一次的损失，跟新闻分类放错一次完全不是一回事。
+
+每次调用都把 model version、概率、用量记下来，阈值调好之后 pin 一个带版本的模型 id，别一直挂着 latest。
+
+置信区间用你自己业务的标注样本去拟合，厂商 demo 里的分布不一定是你的分布。
+
+检索类的流水线，先用一道相关性判断题把材料筛一遍，让每个决策只看到它需要的那几段，既准又省。
+
+## 什么情况该用它，什么情况别碰
+
+适合它的位置很清楚，**系统里本来就存在的那些小判断点**。
+
+工单该转给谁、这条内容合规吗、下一步调哪个工具、这个提取结果要不要复核一遍、这单要不要人工介入。这些地方原本常常塞着一次大模型调用，慢、贵，还要写正则从它的回答里抠答案。
+
+不适合的地方同样清楚。要写东西、要自由发挥、要长链条推理，它干不了也干不好。问题还没想清楚、连选项都列不出来的时候，那属于探索期，该用大模型。
+
+网上现在已经跑出来的案例，内核都是同一个套路，把现有系统里的某个判断点换掉，而不是让它替你干活。
+
+Browser Use 开源的 jev-ultrafast，把网页拆成带编号的元素清单，让 Jev 选"点哪个"，苏黎世到伦敦的机票搜索从 9.5 秒压到 7.1 秒。官方拿它打 Doom，输入换成解析好的结构化状态，压根不看画面，每秒约十次判断，连玩一小时成本约 7 美元。LangChain 在发布第二天就上了 TypeSafeClassifier，把"下一步调哪个工具"这类控制流判断从大模型手里接走。Vercel 在 AI Gateway 和 AI SDK 7 的 evaluate 里集成了它，做合规审核和事实一致性打分。
+
+看明白这些例子你会发现一件事，**它们都不是"让 AI 替我干活"，是"给系统装上了一排会理解语义的 if 语句"**。
+
+如果你手上正好有一个卡在主链路上、每天要跑几十万次的小判断，那确实值得现在就去试一把。至于直接上生产，我的看法跟那位做实测的作者一样，再等等。样本还太薄，官方通道还在排队，第三方网关也还不是服务承诺。
+
+## 来源
+
+- TypeSafe AI 官方博客与文档，9 月 15 日发布公告、Quickstart、System One 概念、Jev 1.13 模型说明　[typesafe.ai](https://typesafe.ai) · [docs.typesafe.ai](https://docs.typesafe.ai)
+- 官方 workflow 评测，711 个用例覆盖四个任务　[evals.typesafe.ai](https://evals.typesafe.ai)
+- 上架信息，Vercel changelog 记录 24 小时内接近 13% 付费团队使用　[vercel.com/changelog](https://vercel.com/changelog)
+- 第三方实测数据 @servasyy_ai，100 条中文资讯 × 3 题，对照组 Qwen 3.8 Flash
+- Browser Use 的 jev-ultrafast　[github.com/browser-use](https://github.com/browser-use)
