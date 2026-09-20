@@ -44,7 +44,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/repositories/";
           },
-        },{id: "post-最近很火的-jev-到底是什么-一篇讲清它干嘛用和怎么用",
+        },{id: "post-what-is-jev-what-it-does-and-how-to-use-it",
+      
+        title: "What Is Jev? What It Does and How to Use It",
+      
+      description: "",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2026/what-is-jev-semantic-decision-model-en/";
+        
+      },
+    },{id: "post-最近很火的-jev-到底是什么-一篇讲清它干嘛用和怎么用",
       
         title: "最近很火的 Jev 到底是什么，一篇讲清它干嘛用和怎么用",
       
@@ -53,17 +64,6 @@ ninja.data = [{
       handler: () => {
         
           window.location.href = "/blog/2026/jev-yu-yi-if/";
-        
-      },
-    },{id: "post-what-is-jev-the-ai-model-that-stops-llms-writing-essays-for-yes-or-no-questions",
-      
-        title: "What Is Jev? The AI Model That Stops LLMs Writing Essays for Yes-or-No...",
-      
-      description: "",
-      section: "Posts",
-      handler: () => {
-        
-          window.location.href = "/blog/2026/what-is-jev-semantic-decision-model-en/";
         
       },
     },{id: "post-一千个-agent-自发站队-ai-也有羊群效应-而且比人更严重",
