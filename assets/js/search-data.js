@@ -44,7 +44,40 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/repositories/";
           },
-        },{id: "post-what-is-jev-what-it-does-and-how-to-use-it",
+        },{id: "post-plan-mode-正在退场",
+      
+        title: "Plan mode 正在退场",
+      
+      description: "",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2026/plan-mode-is-fading/";
+        
+      },
+    },{id: "post-plan-mode-is-on-its-way-out",
+      
+        title: "Plan Mode Is on Its Way Out",
+      
+      description: "",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2026/plan-mode-is-fading-en/";
+        
+      },
+    },{id: "post-what-is-jev-what-it-does-and-how-to-use-it",
+      
+        title: 'What Is Jev? What It Does and How to Use It <svg width="1.2rem" height="1.2rem" top=".5rem" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"><path d="M17 13.5v6H5v-12h6m3-3h6v6m0-6-9 9" class="icon_svg-stroke" stroke="#999" stroke-width="1.5" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"></path></svg>',
+      
+      description: "",
+      section: "Posts",
+      handler: () => {
+        
+          window.open("https://medium.com/@stefaniezhao414/what-is-jev-what-it-does-and-how-to-use-it-e97bc00c3e55?source=rss-138ac7d61c06------2", "_blank");
+        
+      },
+    },{id: "post-what-is-jev-what-it-does-and-how-to-use-it",
       
         title: "What Is Jev? What It Does and How to Use It",
       
