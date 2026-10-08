@@ -44,7 +44,29 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/repositories/";
           },
-        },{id: "post-plan-mode-正在退场",
+        },{id: "post-把jev搬到本地-四个本地模型实际场景测评",
+      
+        title: "把Jev搬到本地 - 四个本地模型实际场景测评",
+      
+      description: "本地判断模型适合从这种范围清楚的环节开始。决定自动化边界的，仍是模型在哪些判断后会失败，以及失败的兜底策略如何设计。",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2026/bringing-jev-local-four-models/";
+        
+      },
+    },{id: "post-bringing-jev-local-testing-four-local-models-in-real-world-scenarios",
+      
+        title: "Bringing Jev Local — Testing Four Local Models in Real-World Scenarios",
+      
+      description: "Local decision models are suited to starting with this kind of clearly bounded step. What determines the boundary of automation is still which decisions the model fails at, and how the fallback strategy for those failures is designed.",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2026/bringing-jev-local-four-models-en/";
+        
+      },
+    },{id: "post-plan-mode-正在退场",
       
         title: "Plan mode 正在退场",
       
