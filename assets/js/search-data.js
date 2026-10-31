@@ -44,7 +44,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/repositories/";
           },
-        },{id: "post-ai-can-code-faster-you-can-still-enjoy-programming",
+        },{id: "post-ai写得更快-不意味着人不能继续享受编程",
+      
+        title: "AI写得更快，不意味着人不能继续享受编程",
+      
+      description: "AI 能更快地完成一件事，和我是否还愿意亲手做这件事，是两个问题。",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2026/ai-can-code-faster-still-enjoy-programming/";
+        
+      },
+    },{id: "post-ai-can-code-faster-you-can-still-enjoy-programming",
       
         title: "AI Can Code Faster. You Can Still Enjoy Programming.",
       
