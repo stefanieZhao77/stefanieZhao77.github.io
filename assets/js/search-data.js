@@ -44,7 +44,29 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/repositories/";
           },
-        },{id: "post-把jev搬到本地-四个本地模型实际场景测评",
+        },{id: "post-ai-can-code-faster-you-can-still-enjoy-programming",
+      
+        title: "AI Can Code Faster. You Can Still Enjoy Programming.",
+      
+      description: "AI can do something faster, but whether I still want to do it myself is a separate question.",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2026/ai-can-code-faster-still-enjoy-programming-en/";
+        
+      },
+    },{id: "post-bringing-jev-local-testing-four-local-models-in-real-world-scenarios",
+      
+        title: 'Bringing Jev Local — Testing Four Local Models in Real-World Scenarios <svg width="1.2rem" height="1.2rem" top=".5rem" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"><path d="M17 13.5v6H5v-12h6m3-3h6v6m0-6-9 9" class="icon_svg-stroke" stroke="#999" stroke-width="1.5" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"></path></svg>',
+      
+      description: "",
+      section: "Posts",
+      handler: () => {
+        
+          window.open("https://medium.com/@stefaniezhao414/bringing-jev-local-testing-four-local-models-in-real-world-scenarios-a155dbbf09c3?source=rss-138ac7d61c06------2", "_blank");
+        
+      },
+    },{id: "post-把jev搬到本地-四个本地模型实际场景测评",
       
         title: "把Jev搬到本地 - 四个本地模型实际场景测评",
       
