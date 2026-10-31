@@ -7,10 +7,12 @@ tags: ["AI", "Programming"]
 lang: "en"
 description: "AI can do something faster, but whether I still want to do it myself is a separate question."
 summary: "AI can do something faster, but whether I still want to do it myself is a separate question."
+translation_url: "https://stefaniezhao77.github.io/blog/2026/ai-can-code-faster-still-enjoy-programming/"
 linkedin: false
 x: false
 ---
 
+[中文](https://stefaniezhao77.github.io/blog/2026/ai-can-code-faster-still-enjoy-programming/)
 
 With AI advancing so quickly, I suspect many programmers are struggling with deep self-doubt. This is especially true when everyone talks about AI replacing people and judges humans and tools by exactly the same standards. AI can write a feature in a few minutes, so why spend hours figuring it out yourself? A page can be generated from a few sentences, so why are you still adjusting the layout and working out how to implement it?
 
