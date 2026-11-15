@@ -44,7 +44,29 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/repositories/";
           },
-        },{id: "post-ai写得更快-不意味着人不能继续享受编程",
+        },{id: "post-让ai直接修改模型权重-weight-space-programming详解",
+      
+        title: "让AI直接修改模型权重：Weight Space Programming详解",
+      
+      description: "RSI 是 Recursive Self-Improvement，中文叫“递归自我改进”。关键在于，一轮改进不仅让 AI 更会做某项任务，还让它更擅长完成下一轮改进。上一轮的成果重新进入研发过程，形成反馈。",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2026/weight-space-programming/";
+        
+      },
+    },{id: "post-letting-ai-directly-modify-model-weights-a-guide-to-weight-space-programming",
+      
+        title: "Letting AI Directly Modify Model Weights: A Guide to Weight Space Programming",
+      
+      description: "RSI stands for Recursive Self-Improvement. The key is that an improvement not only makes an AI better at a particular task, but also makes it better at carrying out the next round of improvement. The result of one round re-enters the research and development process, creating feedback.",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2026/weight-space-programming-en/";
+        
+      },
+    },{id: "post-ai写得更快-不意味着人不能继续享受编程",
       
         title: "AI写得更快，不意味着人不能继续享受编程",
       
