@@ -44,7 +44,29 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/repositories/";
           },
-        },{id: "post-让ai直接修改模型权重-weight-space-programming详解",
+        },{id: "post-codex-沙箱详解-ai-能做什么-权限由谁决定",
+      
+        title: "Codex 沙箱详解：AI 能做什么，权限由谁决定？",
+      
+      description: "让 AI 在聊天窗口里告诉你怎么改代码，和让它直接在你的电脑上改，是两回事。后者可以跑测试、读日志、改文件。那你交给它一个项目时，怎么保证它只在你划好的范围里干活？",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2026/codex-sandbox-permissions/";
+        
+      },
+    },{id: "post-codex-sandbox-explained-what-can-ai-do-and-who-decides-its-permissions",
+      
+        title: "Codex Sandbox Explained: What Can AI Do, and Who Decides Its Permissions?",
+      
+      description: "Having AI tell you how to change code in a chat window and having it make those changes directly on your computer are two different things. In the latter case, it can run tests, read logs, and modify files. When you give it a project, how do you ensure it works only within the boundaries you have set?",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2026/codex-sandbox-permissions-en/";
+        
+      },
+    },{id: "post-让ai直接修改模型权重-weight-space-programming详解",
       
         title: "让AI直接修改模型权重：Weight Space Programming详解",
       
